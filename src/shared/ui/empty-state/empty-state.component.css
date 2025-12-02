@@ -1,0 +1,42 @@
+:host {
+    display: block;
+    margin: auto;
+}
+
+:host .text-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: var(--numbers-4, 4px);
+}
+
+:host .text-container__title {
+    color: var(--text-base-primary, #14151A);
+
+    /* Body M/Medium */
+    font-family: var(--typography-family-inter, Inter);
+    font-size: var(--typography-size-body-m, 18px);
+    font-style: normal;
+    font-weight: 500;
+    line-height: var(--typographyline-heightbody-m, 26px);
+    letter-spacing: var(--typographyletter-spacingbody-m, -0.2px);
+}
+
+:host .text-container__description {
+    color: var(--text-base-secondary, #0F132499);
+
+    /* Caption L/Regular */
+    font-family: var(--typography-family-inter, Inter);
+    font-size: var(--typography-size-caption-l, 14px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: var(--typography-line-height-caption-l, 20px); /* 142.857% */
+    letter-spacing: var(--typography-letter-spacing-caption-l, -0.1px);
+}
+
+:host .buttons-container {
+    display: flex;
+    justify-content: center;
+    gap: var(--numbers-12, 12px);
+    margin-top: var(--numbers-24, 24px);
+}

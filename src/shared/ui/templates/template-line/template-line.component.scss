@@ -1,0 +1,59 @@
+:host {
+    //добавил 100% потому что в фигме пока что неизвестно как выставить такую ширину
+    width: 100%;
+
+    &.column-1 {
+        display: flex;
+        padding: var(--measurements-gap-12, 12px) var(--measurements-gap-16, 16px);
+        align-items: center;
+        gap: var(--measurements-gap-16, 16px);
+
+        //не хватало этого параметра чтобы все выглядело как в фигме.
+        justify-content: center;
+    }
+
+    &.column-2 {
+        display: flex;
+        padding: var(--measurements-gap-12, 12px) var(--measurements-gap-16, 16px) var(--measurements-gap-11, 11px) var(--measurements-gap-16, 16px);
+        align-items: center;
+        gap: var(--measurements-gap-16, 16px);
+        height: 56px;
+        align-self: stretch;
+        //не хватало этого параметра чтобы все выглядело как в фигме.
+        justify-content: space-between;
+    }
+
+    &.line-of-table-header {
+        display: flex;
+        height: 40px;
+        min-height: 40px;
+        align-items: center;
+        flex-shrink: 0;
+    }
+
+    &.line-of-table-row {
+        display: flex;
+        height: 54px;
+        min-height: 54px;
+        align-items: center;
+        flex-shrink: 0;
+    }
+
+    &.promotions {
+        display: flex;
+        padding: var(--measurements-gap-16, 16px);
+        align-items: center;
+        gap: var(--measurements-gap-16, 16px);
+    }
+
+    &.n_p-0 {
+        display: flex;
+        padding: var(--measurements-gap-0, 0);
+        align-items: center;
+        gap: var(--measurements-gap-16, 16px);
+    }
+
+    &.yes {
+        border-bottom: 1px solid #F7F7F8;
+    }
+}

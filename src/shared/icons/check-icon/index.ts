@@ -1,0 +1,1 @@
+export { CheckIconComponent } from './check-icon.component';

@@ -1,0 +1,1 @@
+export const FIRED_STATE_VALUE = 'fired';

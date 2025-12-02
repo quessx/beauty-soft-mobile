@@ -1,0 +1,8 @@
+<bsm-actions-wrapper (cancel)="onCancel()" (confirm)="onConfirm()" [centerText]="centerText">
+    <div container>
+        <div header>
+            <bsm-text [color]="'primary'" [type]="'body-s'">{{entitiesTitle}}</bsm-text>
+        </div>
+        <ui-radio-group [options]="entities" [formControl]="control" ></ui-radio-group>
+    </div>
+</bsm-actions-wrapper>

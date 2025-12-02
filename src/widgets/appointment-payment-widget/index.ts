@@ -1,0 +1,1 @@
+export { AppointmentPaymentWidgetComponent } from './appointment-payment-widget.component';

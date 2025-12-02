@@ -1,0 +1,73 @@
+@mixin column-gradient($left-width, $center-width, $left-color: #F7F7F8, $center-color: #fff, $right-color: #F7F7F8) {
+    background: linear-gradient(to right,
+        #{$left-color} 0%,
+        #{$left-color} #{$left-width},
+        #{$center-color} #{$left-width},
+        #{$center-color} calc(#{$left-width} + #{$center-width}),
+        #{$right-color} calc(#{$left-width} + #{$center-width}),
+        #{$right-color} 100%);
+}
+
+:host {
+    --focus-width: 177px;
+    border: 1px solid var(--border-action-normal, #DEE0E3);
+    background: var(--background-surface-default, #FFF);
+    box-sizing: border-box;
+    position: absolute;
+    height: 100%;
+    width: var(--focus-width);
+    border-top-left-radius: var(--measurements-radius-lg, 10px);
+    border-top-right-radius: var(--measurements-radius-lg, 10px);
+    border-bottom: none;
+    top: 0;
+    left: calc(69px + var(--width));
+    overflow: hidden;
+    pointer-events: none;
+    box-shadow: 0 -20px 0 0 var(--background-surface-neutral, #F7F7F8);
+    z-index: 1;
+
+    .fix-height, .scroll-y-container {
+        max-height: 100%;
+        display: block;
+        height: inherit;
+    }
+
+    .calc-height {
+        height: calc(100% - 61px);
+    }
+
+    .first-element {
+        margin-top: -1px;
+    }
+
+    .shadow {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 20px;
+        pointer-events: none;
+        background: linear-gradient(270deg, rgba(255, 255, 255, 0.00) 0%, rgba(255, 255, 255, 0.60) 100%);
+    }
+
+    .scroll-y-container {
+        overflow: hidden;
+        height: 100%;
+        max-width: 100%; 
+        table {
+            min-width: 374px;
+        }
+    }
+    .scroll-header-container {
+        overflow-x: hidden;
+        max-width: 177px;
+        table {
+            min-width: 374px;
+        }
+    }
+
+    .fc-timegrid-col-frame {
+        padding: 0 var(--measurements-gap-5, 5px);
+    }
+
+}

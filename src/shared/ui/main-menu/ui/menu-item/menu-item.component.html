@@ -1,0 +1,11 @@
+@if (item) {
+    <a pRipple class="grid grid-cols-[auto_1fr_auto] items-center gap-2 px-2 py-[10px] cursor-pointer group" [class.active_menu_item]="item.isActive" [attr.href]="item.url ? item.url : null">
+        @if (item.iconComponent) {
+            <ng-container *ngComponentOutlet="item.iconComponent"></ng-container>
+        }
+        <bsm-text color="primary" type="body-s-medium">{{ item.label | translate}}</bsm-text>
+        @if (item.items?.length) {
+            <svg beauty-expendable-icon class="icon" width="16" height="16" viewBox="0 0 20 20" [state]="(!item.expanded ? 'closed' : 'open')"></svg>
+        }
+    </a>
+}

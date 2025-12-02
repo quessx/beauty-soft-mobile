@@ -1,0 +1,27 @@
+@if (hasItems()) {
+    <form [formGroup]="appointmentDataService.getForm( )">
+        <bsm-template-left-column-card class="items-container" formArrayName="selected_services">
+            @for (alias of appointmentDataService.selectedServices.controls; track alias; let i = $index) {
+                <bsm-template-line [stroke]="'yes'" [type]="'column-2'" [formGroup]="alias">
+                    <bsm-left-column-for-line class="left-column" [cssClasses]="'services-and-goods'">
+                        <bsm-text [type]="'body-s'" [color]="'primary'">{{ alias.value.title }}
+                        </bsm-text>
+                    </bsm-left-column-for-line>
+                    <bsm-right-column-line [cssClasses]="'price'">
+                        <span class="input-price">
+<!--                            <span class="price">{{ alias.controls.price.value + '' | spaceDigits }}<svg class="rub-icon" beauty-ruble-icon></svg></span>-->
+                            <ui-input-from formControlName="price" [inputMode]="'numeric'"
+                                      [options]="inputTypePriceIcons"></ui-input-from>
+                        </span>
+                        <span class="input-discount">
+                            <ui-input-from formControlName="discount_percent" [options]="inputTypePercentIcons"></ui-input-from>
+                        </span>
+                        @if (!isPaidSignal()) {
+                            <svg beauty-close-icon (click)="onRemove( $event, alias.value['id'] )"></svg>
+                        }
+                    </bsm-right-column-line>
+                </bsm-template-line>
+            }
+        </bsm-template-left-column-card>
+    </form>
+}

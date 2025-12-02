@@ -1,0 +1,1 @@
+export { PeopleGroupCircleIconComponent } from './people-group-circle-icon.component'

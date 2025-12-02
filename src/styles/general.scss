@@ -1,0 +1,60 @@
+@mixin defaultScrollbar() {
+    &::-webkit-scrollbar {
+        width: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb:active {
+        cursor: grabbing;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 999px;
+        background-color: var(--background-surface-neutral-subtle, #E9EAEC);
+        cursor: grab;
+    }
+
+    &::-webkit-scrollbar-track {
+        margin: 6px;
+    }
+}
+
+@mixin scrollbarWithTransparentBorder {
+    &::-webkit-scrollbar {
+        width: 12px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-clip: padding-box;
+        border: 4px solid transparent !important;
+    }
+}
+
+@mixin fonts_family() {
+    /* Body S/Regular */
+    font-family: var(--typography-family-inter, Inter);
+    font-size: var(--typography-size-body-s, 16px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: var(--typography-line-height-body-s, 24px);
+    /* 150% */
+    letter-spacing: var(--typography-letter-spacing-body-s, -0.2px);
+}
+
+@mixin rule($property, $value, $important: false) {
+    #{$property}: $value#{if($important, ' !important', '')};
+}
+
+@mixin fonts_family_medium($isNeedImportant: false) {
+    @include rule(font-family, var(--typography-family-inter, Inter), $isNeedImportant);
+    @include rule(font-size, var(--typography-size-caption-m, 12px), $isNeedImportant);
+    @include rule(font-style, normal, $isNeedImportant);
+    @include rule(font-weight, 500, $isNeedImportant);
+    @include rule(line-height, var(--typography-line-height-caption-m, 16px), $isNeedImportant);
+    @include rule(letter-spacing, var(--typography-letter-spacing-caption-m, 0), $isNeedImportant);
+}
+
+@mixin disabled_button_state() {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+}

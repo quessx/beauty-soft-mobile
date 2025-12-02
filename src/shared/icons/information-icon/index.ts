@@ -1,0 +1,1 @@
+export { InformationIconComponent } from './information-icon.component';

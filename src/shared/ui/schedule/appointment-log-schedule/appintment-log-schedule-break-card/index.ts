@@ -1,0 +1,1 @@
+export { AppintmentLogScheduleBreakCardComponent } from './appintment-log-schedule-break-card.component';

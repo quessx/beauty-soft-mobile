@@ -1,0 +1,1 @@
+export { NextDayProgressComponent} from './next-day-progress.component';

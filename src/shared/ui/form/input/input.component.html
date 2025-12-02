@@ -1,0 +1,31 @@
+<ng-container [formGroup]="form">
+@switch (typeComponent()) {
+    @case('input-search-type') {
+        <beauty-input-search-type
+            [usedMask]="usedMask()"
+            [options]="optionsPopup()"
+            [placeholder]="placeholder()"
+            [signalOptions]="signalOptions()"
+            [searchSignal]="searchClientWithNameSignal()"
+            [isDisabled]="disabled()"
+            (closePopup)="onClosePopup.emit()"
+            formControlName="value"
+        ></beauty-input-search-type>
+    }
+    @case ('beauty-input-date') {
+        <beauty-input-date
+            [attr.disabled]="isDisabled()"
+            formControlName="value"
+            class="date_time"
+        ></beauty-input-date>
+    }
+    @case ('ui-input') {
+        <ui-input
+            [placeholder]="placeholder()"
+            [type]="type()"
+            [autocomplete]="autocomplete()"
+            formControlName="value"
+        ></ui-input>
+    }
+}
+</ng-container>

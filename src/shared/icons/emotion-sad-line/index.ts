@@ -1,0 +1,1 @@
+export { EmotionSadLineComponent } from './emotion-sad-line.component';

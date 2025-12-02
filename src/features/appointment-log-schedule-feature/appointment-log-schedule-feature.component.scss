@@ -1,0 +1,18 @@
+@use 'schedule/base';
+
+:host ::ng-deep full-calendar {
+    .fc-scroller-harness {
+        position: relative;
+        min-height: 61px;
+
+        filter-btn-ae {
+            position: absolute;
+            top: 12px;
+            right: 16px;
+        }
+    }
+
+    .fc-timegrid-cols {
+        z-index: 1;
+    }
+}

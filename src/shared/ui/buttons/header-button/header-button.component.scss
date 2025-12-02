@@ -1,0 +1,24 @@
+:host {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    &.enabled ::ng-deep svg path {
+        stroke: var(--text, #129ABF);
+        fill: var(--text, #129ABF);
+    }
+
+    &.disabled {
+        pointer-events: none;
+
+        & ::ng-deep svg path {
+            stroke: var(--text-base-quaternary, #0A0F293F);
+            fill: var(--text-base-quaternary, #0A0F293F);
+        }
+    }
+
+    &.red ::ng-deep svg path {
+        stroke: var(--text-status-destructive, #E6483D);
+        fill: var(--text-status-destructive, #E6483D);
+    }
+}

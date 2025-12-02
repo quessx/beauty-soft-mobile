@@ -1,0 +1,1 @@
+export { WeekHeaderComponent } from './week-header.component'

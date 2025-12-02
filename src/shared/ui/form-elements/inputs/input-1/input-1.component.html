@@ -1,0 +1,56 @@
+@if(label()) {
+<div label>
+    <div container>
+        <span lab>{{label()}}</span>
+
+        @if(labelOptional()) {
+        <span opt>({{labelOptional()}})</span>
+        }
+
+        @if(labelRequired()) {
+        <span req>*</span>
+        }
+    </div>
+    <div tooltip></div>
+</div>
+}
+
+<div input>
+    @if(flag()) {
+    <img [src]="`/input/flags/${flag()}.svg`" alt="">
+    }
+    @if(dropdown()) {
+    <div dropdown>
+        <span>UK</span>
+        <img src="/input/dropdown.svg" alt="">
+    </div>
+    }
+
+    @if(lead()) {
+    <img tail [src]="`/input/leads/${lead()}.svg`" alt="">
+    }
+    <input #input [placeholder]="placeholder() | translate" [type]="_type" [enterKeyHint]="enterKeyHint" [autocomplete]="autocomplete" (input)="onInput($event)">
+    @if(badge()) {
+    <div badge>
+        <div badge-cont>
+            <div badge-label>{{badge()}}</div>
+        </div>
+    </div>
+    }
+    @if(tail) {
+    <img tail [src]="`/input/tails/${tail}.svg`" alt="" (click)="onTailClick()">
+    }
+    @if(tailDropdown()) {
+    <div tail-dropdown>
+        <span>EUR</span>
+        <img src="/input/dropdown.svg" alt="">
+    </div>
+    }
+</div>
+
+@if(helperText()) {
+<div helper>
+    <img src="/input/helper.svg" alt="">
+    <span>{{helperText()}}</span>
+</div>
+}

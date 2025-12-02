@@ -1,0 +1,39 @@
+:host {
+    position: relative;
+    line-height: 0;
+}
+
+.tlp {
+    z-index: 10;
+    position: fixed;
+    pointer-events: none;
+    padding: 3px 7px;
+    max-width: 190px;
+    height: auto;
+    box-sizing: border-box;
+    overflow-wrap: break-word;
+    white-space: pre-line;  
+
+    color: var(--text-base-primary, #14151A);
+
+    /* Caption M/Regular */
+    font-family: var(--typography-family-inter, Inter);
+    font-size: var(--typography-size-caption-m, 12px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: var(--typography-line-height-caption-m, 16px);
+    /* 133.333% */
+    letter-spacing: var(--typography-letter-spacing-caption-m, 0px);
+
+    border-radius: var(--measurements-radius-sm, 6px);
+    border: 1px solid var(--border-action-normal, #DEE0E3);
+    background: var(--background-surface-default, #FFF);
+
+    /* Tooltip/sm */
+    box-shadow: 0px 10px 16px -3px rgba(20, 21, 26, 0.05), 0px 3px 10px -2px rgba(20, 21, 26, 0.02);
+}
+
+.tooltip-arrow {
+    z-index: 11;
+    position: absolute;
+}

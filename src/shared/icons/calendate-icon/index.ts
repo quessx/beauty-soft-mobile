@@ -1,0 +1,1 @@
+export { CalendateIconComponent } from './calendate-icon.component';

@@ -1,0 +1,1 @@
+export { TooltipArrowIconComponent } from './tooltip-arrow-icon.component';

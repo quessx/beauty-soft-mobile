@@ -1,0 +1,39 @@
+@if (selectedOptions()?.orderName) {
+    <bsm-right-column-line [cssClasses]="state()">
+        @if (state() === 'master') {
+            <bsm-molecule-master>
+                <ng-container [ngTemplateOutlet]="content"></ng-container>
+            </bsm-molecule-master>
+        } @else if (state() === 'client') {
+            <ng-container [ngTemplateOutlet]="content"></ng-container>
+        }
+    </bsm-right-column-line>
+} @else () {
+    <bsm-right-column-line [cssClasses]="'text'">
+        <bsm-text [type]="'body-s'" [color]="'secondary'">
+            {{ 'bsm_specialist.placeholder' | translate }}
+        </bsm-text>
+    </bsm-right-column-line>
+}
+
+<ng-template #content>
+    @if (isShowIcon()) {
+        <div class="avatar">
+            @if (selectedOptions()?.icon === 'default') {
+                <svg bsm-default-avatar-icon></svg>
+            } @else {
+                <img beauty-user-image [src]="selectedOptions()?.icon || ''" alt="avatar">
+            }
+        </div>
+    }
+    <bsm-text class="main-description" [type]="'body-s'" [color]="'primary'" [title]="selectedOptions()?.orderName + ''">
+            <span class="order-name">
+                {{ orderName() }}
+            </span>
+    </bsm-text>
+    @if (selectedOptions()?.description) {
+        <bsm-text class="description" [type]="'body-s'" [color]="'primary'">
+            {{ selectedOptions()?.description }}
+        </bsm-text>
+    }
+</ng-template>

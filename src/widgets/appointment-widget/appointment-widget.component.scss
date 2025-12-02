@@ -1,0 +1,29 @@
+@use 'typography' as t;
+
+:host {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: flex;
+    overflow: hidden;
+}
+
+:host ::ng-deep bsm-actions-wrapper {
+    div[header] {
+        display: flex;
+
+        & > span {
+            color: var(--text-base-primary, #14151A);
+            @include t.font('body-s-medium');
+        }
+    }
+}
+
+bsm-actions-wrapper {
+    margin-top: auto;
+    height: min-content;
+    max-height: calc(100% - 49px);
+}

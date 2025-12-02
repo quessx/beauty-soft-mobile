@@ -1,0 +1,73 @@
+@use 'variables';
+@use "typography";
+:host-context(.keyboard, .short-background) {
+    .auth__background {
+        height: 30dvh;
+    }
+}
+
+:host-context(.keyboard.short-background) {
+    .auth__background {
+        height: 20dvh;
+    }
+}
+
+:host-context(.big-title-margin) {
+    .auth__title {
+        margin-bottom: 16px;
+    }
+}
+
+:host {
+    display: block;
+    position: relative;
+}
+
+.auth {
+    &__background {
+        width: 100%;
+        height: 37dvh;
+        background: url("/backgrounds/auth.png") no-repeat left bottom / cover;
+        margin-bottom: -67px;
+        transition: 0.5s all;
+        max-height: 348px;
+    }
+
+    &__content {
+        display: grid;
+        row-gap: 16px;
+        padding: 0 32px;
+    }
+
+    &__title {
+        @include typography.font(h6-semibold);
+        color: var(--text-base-primary, #14151A);
+        margin-bottom: -8px;
+    }
+
+}
+
+@media (min-width: variables.$bp-desktop) {
+    .auth {
+        &__content {
+            align-items: center;
+            justify-items: center;
+            margin: 192px 96px 0;
+            padding: 0;
+        }
+
+        &__desktop-back {
+            color: var(--text-base-tertiary, rgba(13, 17, 38, 0.40));
+            @include typography.font(body-s);
+            cursor: pointer;
+        }
+
+        &__desktop-back-icon {
+            width: 20px;
+            height: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}

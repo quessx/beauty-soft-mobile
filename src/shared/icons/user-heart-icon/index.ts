@@ -1,0 +1,1 @@
+export { UserHeartIconComponent } from './user-heart-icon.component';

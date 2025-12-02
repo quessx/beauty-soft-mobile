@@ -1,0 +1,33 @@
+@use 'typography' as t;
+
+input {
+    margin: 0;
+    display: none;
+}
+
+label {
+    display: flex;
+    padding: var(--measurements-gap-8, 8px) var(--measurements-gap-16, 16px);
+    align-items: center;
+    gap: var(--measurements-gap-16, 16px);
+    align-self: stretch;
+
+    @include t.font(body-s);
+
+    &::before {
+        content: '';
+        position: relative;
+        box-sizing: border-box;
+        width: 20px;
+        height: 20px;
+        background-color: transparent;
+        border-radius: 50%;
+        padding: 4px;
+        background-clip: content-box;
+        border: 2px solid var(--Main, #8DE1F8);
+    }
+
+    &:has(input:checked)::before {
+        background-color: var(--Main, #8DE1F8);
+    }
+}

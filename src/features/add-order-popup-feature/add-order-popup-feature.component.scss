@@ -1,0 +1,39 @@
+@use 'typography' as t;
+
+beauty-checkbox-card-group {
+    overflow: auto;
+}
+
+:host {
+    background-color: white;
+    @include t.font(body-s-medium);
+}
+
+.add-order-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    height: 100%;
+}
+
+beauty-checkbox-card-group {
+    border-radius: 16px;
+    background: var(--background-surface-default, #FFF);
+    display: flex;
+    height: 100%;
+}
+
+.search-input {
+    text-overflow: ellipsis;
+
+    &::ng-deep {
+        &::placeholder {
+            color: var(--text-base-tertiary, rgba(13, 17, 38, 0.40)) !important;
+        }
+        .search-input-container, .search-container {
+            height: 44px !important;
+        }
+    }
+
+    @include t.font(body-s);
+}

@@ -1,0 +1,81 @@
+@use 'typography' as t;
+
+:host {
+    display: flex;
+    align-items: center;
+    padding: var(--measurements-gap-4, 4px) var(--measurements-gap-0, 0);
+    color: var(--text-base-primary, #14151A);
+
+    // Typography styles
+    &.body-l-medium {
+        @include t.font('body-l-medium');
+    }
+
+    &.body-s-medium {
+        @include t.font('body-s-medium');
+    }
+
+    &.body-s {
+        @include t.font('body-s');
+    }
+
+    &.caption-l {
+        @include t.font('caption-l');
+    }
+
+    &.caption-l-medium {
+        @include t.font('caption-l-medium');
+    }
+
+    &.caption-m {
+        @include t.font('caption-m');
+    }
+
+    &.caption-m-medium {
+        @include t.font('caption-m-medium');
+    }
+
+    &.caption-s {
+        @include t.font('caption-s');
+    }
+
+    &.caption-s-bold {
+        @include t.font('caption-s-bold');
+    }
+
+    &.body-l-semibold {
+        @include t.font('body-l-semibold');
+    }
+
+    &.caption-l-underline {
+        @include t.font('caption-l-underline');
+    }
+
+    &.caption-8-regular {
+        @include t.font('caption-8-regular');
+    }
+    // Color styles
+    &.primary {
+        color: var(--text-base-primary, #14151A);
+    }
+
+    &.secondary {
+        color: var(--text-base-secondary, #0F132499);
+    }
+
+    &.tertiary {
+        color: var(--text-base-tertiary, #0D112666);
+    }
+
+    &.quaternary {
+        color: var(--text-base-quaternary, #0A0F293F);
+    }
+
+    &.red {
+        color: var(--text-status-destructive, #E6483D);
+    }
+
+    &.blue {
+        color: var(--text, #129ABF);
+    }
+}

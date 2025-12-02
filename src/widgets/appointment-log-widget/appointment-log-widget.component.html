@@ -1,0 +1,20 @@
+@defer (when isLoading()) {
+    @if (appointmentLogDataService.scheduleState() === stateDay) {
+        <bsm-appointment-log-schedule-feature
+            [employees]="dayAppointmentLogHelper.employeeModels()"
+            [events]="dayAppointmentLogHelper.events()"
+            [initialDate]="date()"
+        ></bsm-appointment-log-schedule-feature>
+    } @else if (appointmentLogDataService.scheduleState() === stateWeek) {
+        <bsm-appointment-log-schedule-week-feature
+            [events]="appointmentLogLoadService.getIsLoading()() ? weekAppointmentLogHelper.events() : false"
+            (changeWeekday)="onChangeWeekday($event)"
+            (scrolledWeeks)="onScrolledWeeks($event)"
+            [initialDate]="date()"
+        ></bsm-appointment-log-schedule-week-feature>
+    }
+    @if(appointmentLogLoadService.showLoadingOverlay()) {
+        <sensei-default-overlay></sensei-default-overlay>
+    }
+    <router-outlet></router-outlet>
+}

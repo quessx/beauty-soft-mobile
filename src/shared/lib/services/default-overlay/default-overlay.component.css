@@ -1,0 +1,30 @@
+:host {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--bg-default-overlay-color, rgba(32, 32, 32, 0.30));
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+:host(.disabled) {
+    display: none;
+}
+
+.spiner {
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}

@@ -1,0 +1,1 @@
+export { UncheckboxedIconComponent } from './uncheckboxed-icon.component';

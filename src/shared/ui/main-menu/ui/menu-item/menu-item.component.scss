@@ -1,0 +1,30 @@
+:host {
+    & ::ng-deep svg {
+        width: 20px;
+        height: 20px;
+
+        & path {
+            fill-opacity: 1;
+            fill: var(--p-panelmenu-item-color);
+        }
+
+        &.arrow {
+            width: 16px;
+            height: 16px;
+
+            & path {
+                fill: var(--text-base-tertiary);
+            }
+
+        }
+    }
+
+    & .active_menu_item {
+        background-color: var(--p-panelmenu-item-focus-background);
+    }
+
+    & span {
+        color: var(--p-panelmenu-item-color);
+        font-weight: 500;
+    }
+}

@@ -1,0 +1,24 @@
+@if (resolution.isTablet()) {
+    <div class="auth__background"></div>
+}
+
+<div class="auth__content">
+    @if (withBackButton()) {
+        @if (resolution.isTablet()) {
+            <p-button class="absolute left-8 top-8" icon="pi pi-chevron-left" rounded size="small" (onClick)="onBackButtonClick()"></p-button>
+        } @else {
+            <div class="absolute left-8 top-8 flex items-center auth__desktop-back gap-[4px]" (click)="onBackButtonClick()">
+                <div class="pi pi-angle-left auth__desktop-back-icon"></div>
+                <span>Назад</span>
+            </div>
+        }
+    }
+    <img class="w-[129px] h-[67px] shrink-0 aspect-[129/67] mb-8 xl:mb-4" src="logo.svg" alt="">
+    @if (title()) {
+        <div class="auth__title">{{ title() | translate }}</div>
+    }
+    @if (subtitle()) {
+        <div class="auth__secondary [-margin: -24px 0 16px]">{{ subtitle() | translate}}</div>
+    }
+    <ng-content></ng-content>
+</div>

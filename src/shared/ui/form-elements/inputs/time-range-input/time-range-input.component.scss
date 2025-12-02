@@ -1,0 +1,101 @@
+@use 'typography' as t;
+
+:host {
+    color: var(--icon-base-primary, #14151A);
+    @include t.font('body-s');
+    display: flex;
+    height: 32px;
+    max-height: 32px;
+    padding: var(--measurements-gap-0, 0);
+    justify-content: flex-end;
+    align-items: center;
+    gap: var(--measurements-gap-1, 1px);
+    flex: 1 0 0;
+}
+
+.time-input-wrapper {
+    position: relative;
+    flex: 1;
+}
+
+.time-input {
+    display: flex;
+    height: 32px;
+    min-width: 56px;
+    max-width: 77px;
+    padding: var(--measurements-gap-4, 4px) var(--measurements-gap-8, 8px);
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    gap: var(--measurements-gap-0, 0);
+    flex: 1 0 0;
+
+    border: 1px solid rgba(128, 128, 128, 0);
+    border-radius: var(--measurements-radius-lg, 10px);
+    background: var(--background-surface-neutral, #F7F7F8);
+
+    color: var(--icon-base-primary, #14151A);
+
+    @include t.font('body-s');
+
+    /* Remove native browser/timepicker decorations (arrows/indicator) */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: none;
+
+    &::-ms-clear,
+    &::-ms-reveal {
+        display: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        opacity: 0;
+    }
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        appearance: none;
+        margin: 0;
+        -moz-appearance: textfield;
+    }
+
+    &::-webkit-datetime-edit {
+        padding: 3px;
+        font-variant-numeric: tabular-nums;
+    }
+
+    &::-webkit-datetime-edit-ampm-field {
+        display: none;
+    }
+
+    /* Ensure the calendar picker indicator is hidden and non-interactive */
+    &::-webkit-calendar-picker-indicator {
+        display: none;
+        -webkit-appearance: none;
+        opacity: 0;
+        pointer-events: none;
+        background: none;
+    }
+    &::-webkit-date-and-time-value {
+        margin: 1px;
+    }
+    &:focus {
+        border-radius: var(--measurements-radius-lg, 10px);
+        background: var(--background-surface-neutral, #F7F7F8);
+    }
+
+    &:disabled {
+        background-color: #f5f5f5;
+        cursor: not-allowed;
+        opacity: 0.6;
+    }
+}
+
+.separator {
+    color: #666;
+    font-weight: 500;
+    margin: 0 2px;
+}
+
+

@@ -1,0 +1,14 @@
+@if (leftText()) {
+    <bsm-template-line [type]="'column-2'" [stroke]="'no'">
+        <bsm-left-column-for-line [cssClasses]="'text'">
+            <bsm-text [color]="'primary'" [type]="'body-s'">{{ leftText() }}</bsm-text>
+        </bsm-left-column-for-line>
+        <bsm-right-column-line [cssClasses]="'text-2-container'">
+            <ng-content select="[right-content]"/>
+        </bsm-right-column-line>
+    </bsm-template-line>
+} @else {
+    <bsm-left-column-for-line [cssClasses]="'promotion-card'">
+        <ng-content/>
+    </bsm-left-column-for-line>
+}

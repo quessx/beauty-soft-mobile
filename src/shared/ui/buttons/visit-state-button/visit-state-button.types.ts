@@ -1,0 +1,1 @@
+export type TVisitStateButtonStates = 'waiting' | 'success' | 'failed';

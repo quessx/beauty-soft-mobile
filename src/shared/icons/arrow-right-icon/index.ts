@@ -1,0 +1,1 @@
+export { ArrowRightIconComponent } from './arrow-right-icon.component';

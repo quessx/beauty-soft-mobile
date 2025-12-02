@@ -1,0 +1,1 @@
+export { PhoneIconComponent } from './phone-icon.component';

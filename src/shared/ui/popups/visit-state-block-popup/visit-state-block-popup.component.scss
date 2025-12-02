@@ -1,0 +1,26 @@
+.popup-container {
+    position: absolute;
+    z-index: 1000;
+}
+
+.scrollbar-container {
+    display: inline-flex;
+    padding: var(--measurements-gap-12, 12px) var(--measurements-gap-16, 16px);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--measurements-gap-8, 8px);
+
+    border-radius: 10px;
+    background: #FFF;
+
+    /* Shadows/lg */
+    box-shadow: 0 10px 16px -3px rgba(20, 21, 26, 0.08), 0 3px 6px -2px rgba(20, 21, 26, 0.05);
+}
+
+.option {
+    display: flex;
+    width: 121px;
+    padding: var(--measurements-gap-0, 0);
+    align-items: center;
+    gap: var(--measurements-gap-8, 8px);
+}

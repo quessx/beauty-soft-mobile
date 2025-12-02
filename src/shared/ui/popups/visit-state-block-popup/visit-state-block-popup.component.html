@@ -1,0 +1,7 @@
+	<div class="popup-container scrollbar-container" #cont>
+		@for (state of states; let idx = $index; track idx;) {
+			<div class="option" (mousedown)="onMousedown($event, state)">
+                <beauty-visit-state-button [class]="'visit-state-' + state" [class.active]="true" [state]="state"></beauty-visit-state-button>
+			</div>
+		}
+	</div>

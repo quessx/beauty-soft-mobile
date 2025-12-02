@@ -1,0 +1,1 @@
+export { SpinnerIconComponent } from './spinner-icon.component';

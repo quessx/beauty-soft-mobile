@@ -1,0 +1,1 @@
+export { AppointmentLogComponent } from './appointment-log.component';

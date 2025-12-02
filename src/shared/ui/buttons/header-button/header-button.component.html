@@ -1,0 +1,8 @@
+@if (withIcon()) {
+    <ng-content select="[header-button-icon]">
+        <svg beauty-arrow-icon></svg>
+    </ng-content>
+}
+@if (text()) {
+    <bsm-text type="body-s" [color]="textColor()">{{ text() }}</bsm-text>
+}

@@ -1,0 +1,1 @@
+export { PercentIconComponent } from './percent-icon.component';

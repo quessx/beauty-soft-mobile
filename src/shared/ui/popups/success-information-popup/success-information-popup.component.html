@@ -1,0 +1,12 @@
+<div [@showPopup]="animationState" class="success-information-container">
+    <div class="icon">
+        @if (isSuccess) {
+            <svg beauty-success-info-success-icon></svg>
+        } @else {
+            <svg beauty-success-info-error-icon></svg>
+        }
+    </div>
+    <div class="info-text">
+        <span>{{ textInfo | translate }}</span>
+    </div>
+</div>

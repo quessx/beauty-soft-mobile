@@ -1,0 +1,53 @@
+* {
+    view-transition-name: none;
+}
+
+@keyframes slide-in {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes slide-out {
+    from {
+        transform: translateX(0%);
+    }
+
+    to {
+        transform: translateX(100%);
+    }
+}
+
+::view-transition-new(slide-page) {
+    animation-name: slide-in;
+}
+
+::view-transition-old(slide-page) {
+    animation-name: slide-out;
+}
+
+::view-transition-old(slide-page),
+::view-transition-new(slide-page) {
+    animation-duration: 250ms;
+    animation-timing-function: linear;
+}
+
+::view-transition-group(slide-page) {
+    overflow: hidden;
+}
+
+::view-transition-group(overlay-component) {
+    z-index: 10;
+}
+
+sensei-default-overlay-ae {
+    view-transition-name: overlay-component !important;
+}
+
+bsm-appointment-payment-page, bsm-add-order-popup-page, bsm-specialist-popup-page {
+    view-transition-name: slide-page;
+}

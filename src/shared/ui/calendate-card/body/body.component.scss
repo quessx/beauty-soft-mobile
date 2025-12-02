@@ -1,0 +1,27 @@
+.client-info {
+    font-weight: 700;
+}
+
+:host {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    padding: var(--measurements-gap-0, 0) var(--measurements-gap-6, 6px);
+    flex-direction: column;
+
+    color: var(--text-base-primary, #14151A);
+    /* Caption S/Regular */
+    font-family: var(--typography-family-inter, Inter);
+    font-size: var(--typography-size-caption-s, 10px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: var(--typography-line-height-caption-s, 14px);
+    /* 140% */
+    letter-spacing: var(--typography-letter-spacing-caption-s, 0);
+}
+
+p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

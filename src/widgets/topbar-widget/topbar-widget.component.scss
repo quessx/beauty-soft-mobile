@@ -1,0 +1,24 @@
+:host {
+    padding-bottom: 12px;
+    background: var(--background-surface-neutral, #F7F7F8);
+}
+
+sidebar-mobile-feature {
+    @media (orientation: landscape) {
+        padding-left: 56px;
+    }
+
+    box-shadow: 0 2px 2px 0 var(--colors-gray-1a, rgba(10, 15, 41, 0.04));
+
+    ::ng-deep svg[beauty-expendable-icon] path {
+        fill-opacity: 1;
+    }
+
+    & ::ng-deep div.notification-icon-wrapper {
+        display: none;
+    }
+}
+
+:host ::ng-deep beauty-divider {
+    background-color: rebeccapurple !important;
+}

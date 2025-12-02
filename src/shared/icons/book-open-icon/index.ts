@@ -1,0 +1,1 @@
+export { BookOpenIconComponent } from './book-open-icon.component';

@@ -1,0 +1,8 @@
+<div class="tooltip">
+    @if (_tooltipAfter) {
+        <span class="tooltip-after">{{_tooltipAfter}}{{afterPostfix ?? ''}}</span>
+    }
+    {{ _tooltip }}{{afterPostfix ?? ''}}
+    <svg beauty-tooltip-arrow-icon></svg>
+</div>
+<svg beauty-information-icon></svg>

@@ -1,0 +1,34 @@
+@use 'actions-wrapper-parent';
+
+:host {
+    bsm-actions-wrapper {
+        height: 506px;
+
+        & ::ng-deep div[action-cont] {
+            padding-bottom: 0;
+        }
+    }
+}
+
+div[container] {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: var(--measurements-radius-xxl, 16px) var(--measurements-radius-xxl, 16px) var(--measurements-radius-0, 0) var(--measurements-radius-0, 0);
+    background: var(--background-surface-default, #FFF);
+}
+
+div[header] {
+    display: flex;
+    padding: var(--measurements-gap-12, 12px) var(--measurements-gap-16, 16px);
+    align-items: center;
+    gap: var(--measurements-gap-16, 16px);
+    align-self: stretch;
+}
+
+ui-radio-group {
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+}

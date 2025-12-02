@@ -1,0 +1,204 @@
+@use 'general' as gen;
+
+$searchInputHeight: 56px;
+$heightSpeciality: calc(100% - $searchInputHeight);
+
+:host {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+:host .accordion {
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    max-width: 600px;
+}
+
+:host .accordion-item-header {
+    display: flex;
+    padding: 8px 0 8px var(--numbers-12, 12px);
+    align-items: center;
+    gap: 11px;
+    align-self: stretch;
+    border-radius: 10px;
+    background: #F5F6F7;
+    cursor: pointer;
+}
+
+:host .accordion-item-header .icon {
+    margin-left: auto;
+    margin-right: 28px;
+    opacity: 40%;
+}
+
+:host .item-header-texts-container, :host .accordion-item-body {
+    display: flex;
+    flex-direction: column;
+}
+
+:host .accordion-item-body {
+    padding-bottom: 8px;
+}
+
+:host .accordion-item-body-row {
+    display: flex;
+    align-items: center;
+    padding-top: 6px;
+}
+
+:host .second-column {
+    width: 183px;
+}
+
+:host .first-column {
+    width: 100%;
+    max-width: 387px;
+}
+
+:host .column-title {
+    color: var(--text-base-secondary, rgba(15, 19, 36, 0.60));
+
+    /* Caption L/Regular */
+    font-family: var(--typography-family-inter, Inter);
+    font-size: var(--typography-size-caption-l, 14px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: var(--typography-line-height-caption-l, 20px); /* 142.857% */
+    letter-spacing: var(--typography-letter-spacing-caption-l, -0.1px);
+    padding: 10px 0;
+}
+
+:host .accordion-item-body-row mat-checkbox {
+    margin: 0 12px;
+    width: auto;
+}
+
+:host .border {
+    border-bottom: 1px solid var(--border-base-divider, #E9EAEC);
+    background: var(--background-surface-default, #FFF);
+}
+
+:host .disabled, :host .accordion-item-body-row.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+:host ::ng-deep cdk-accordion cdk-accordion-item mat-checkbox {
+    padding-left: 1px;
+    width: auto;
+}
+
+:host ::ng-deep cdk-accordion-item {
+    padding-bottom: 8px;
+}
+
+:host .item-header-title {
+    color: var(--text-base-primary, #14151A);
+
+    /* Caption L/Regular */
+    font-family: var(--typography-family-inter, Inter);
+    font-size: var(--typography-size-caption-l, 14px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: var(--typography-line-height-caption-l, 20px); /* 142.857% */
+    letter-spacing: var(--typography-letter-spacing-caption-l, -0.1px);
+}
+
+:host .item-header-description {
+    color: var(--text-base-secondary, rgba(15, 19, 36, 0.60));
+
+    /* Caption M/Regular */
+    @include gen.fonts_family_medium();
+    font-weight: 500 !important;
+    padding-top: 2px;
+}
+
+:host .item-label {
+    color: var(--text-base-primary, #14151A);
+
+    /* Caption L/Regular */
+    font-family: var(--typography-family-inter, Inter);
+    font-size: var(--typography-size-caption-l, 14px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: var(--typography-line-height-caption-l, 20px); /* 142.857% */
+    letter-spacing: var(--typography-letter-spacing-caption-l, -0.1px);
+    padding-top: 2px;
+}
+
+:host .item-price {
+    color: var(--text-base-secondary, rgba(15, 19, 36, 0.60));
+
+    /* Caption M/Regular */
+    font-family: var(--typography-family-inter, Inter);
+    font-size: var(--typography-size-caption-m, 12px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: var(--typography-line-height-caption-m, 16px); /* 133.333% */
+    letter-spacing: var(--typography-letter-spacing-caption-m, 0px);
+    padding-top: 2px;
+}
+
+:host mat-divider {
+    margin: 7px 0 0 0;
+}
+
+:host ::ng-deep .mdc-checkbox {
+    height: 14px;
+}
+
+:host .duration {
+    color: var(--text-base-primary, #14151A);
+    font-family: var(--typography-family-inter, Inter);
+    font-size: var(--typography-size-caption-l, 14px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: var(--typography-line-height-caption-l, 20px); /* 142.857% */
+    letter-spacing: var(--typography-letter-spacing-caption-l, -0.1px);
+    padding-left: 1px;
+}
+
+:host .empty-state {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: -0.1px;
+    color: #0F1324;
+    opacity: 60%;
+    padding-left: 44px;
+    padding-top: 12px;
+}
+
+:host .group-accordion {
+    margin-left: 10px;
+}
+
+
+:host .accordion.mobile {
+    border-radius: 16px;
+    background: var(--background-surface-default, #FFF);
+    max-width: 100%;
+    height: $heightSpeciality;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    .accordion-item-header {
+        background: var(--background-surface-default, #FFF) !important;
+    }
+
+    .item-header-title {
+        color: var(--text-base-primary, #14151A);
+
+        /* Body S/Medium */
+        font-family: var(--typography-family-inter, Inter);
+        font-size: var(--typography-size-body-s, 16px);
+        font-style: normal;
+        font-weight: 500;
+        line-height: var(--typography-line-height-body-s, 24px); /* 150% */
+        letter-spacing: var(--typography-letter-spacing-body-s, -0.2px);
+    }
+}

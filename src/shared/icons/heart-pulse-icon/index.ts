@@ -1,0 +1,1 @@
+export { HeartPulseIconComponent } from './heart-pulse-icon.component';

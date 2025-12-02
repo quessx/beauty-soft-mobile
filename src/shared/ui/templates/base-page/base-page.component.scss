@@ -1,0 +1,25 @@
+:host {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    padding: var(--measurements-gap-0, 0);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--measurements-gap-12, 12px);
+    background: var(--background-surface-neutral, #F7F7F8);
+    .back-icon {
+        cursor: pointer;
+    }
+}
+
+:host-context(.fixed) {
+    position: fixed;
+    transform: translateX(calc(+100% + 0px));
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    bottom: 0;
+    right: 0;
+    background-color: #ffffff;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);    
+}

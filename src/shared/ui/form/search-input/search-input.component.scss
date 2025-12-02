@@ -1,0 +1,53 @@
+$searchInputHeight: 56px;
+
+.search-input-container {
+    display: flex;
+    height: $searchInputHeight;
+    padding: var(--numbers-0, 0);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--measurements-gap-8, 8px);
+    flex-shrink: 0;
+    align-self: stretch;
+
+    .search-container {
+        display: flex;
+        padding: var(--measurements-gap-0, 0);
+        align-items: flex-start;
+        gap: var(--measurements-gap-0, 0);
+        flex: 1 0 0;
+        align-self: stretch;
+
+        border-radius: var(--measurements-radius-0, 0);
+
+        .field {
+            display: flex;
+            padding: var(--numbers-10, 10px) var(--numbers-12, 12px);
+            align-items: center;
+            gap: var(--numbers-0, 0);
+            flex: 1 0 0;
+            align-self: stretch;
+            border-radius: var(--measurements-radius-xxl, 16px);
+            background: var(--background-input-normal, #FFF);
+
+            .ui-input-wrapper {
+                display: flex;
+                padding: var(--numbers-0, 0);
+                align-items: center;
+                gap: var(--numbers-4, 4px);
+                flex: 1 0 0;
+            }
+
+            ::ng-deep ui-input {
+                .ui-input {
+                    width: 100%;
+                    border: none !important;
+                }
+
+                input {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

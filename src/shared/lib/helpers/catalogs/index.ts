@@ -1,0 +1,1 @@
+export { DayTypesCatalogTypes } from './day-types-catalog.types';

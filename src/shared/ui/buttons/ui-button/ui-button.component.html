@@ -1,0 +1,6 @@
+@if ( hostClass().includes('icon-only') ) {
+    <svg beauty-spinner-icon></svg>
+} @else {
+    <ng-content select="icon"></ng-content>
+    {{ text() | translate }}
+}

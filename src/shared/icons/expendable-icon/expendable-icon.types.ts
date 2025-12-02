@@ -1,0 +1,1 @@
+export type TExpendableState = 'open' | 'closed';

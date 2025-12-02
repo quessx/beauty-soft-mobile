@@ -1,0 +1,1 @@
+export { CheckboxedIconComponent } from './checkboxed-icon.component';

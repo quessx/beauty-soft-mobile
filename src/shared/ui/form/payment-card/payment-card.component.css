@@ -1,0 +1,58 @@
+.container {
+    display: flex;
+    padding: 22px;
+    border-radius: 10px;
+    width: 248px;
+    height: 88px;
+    position: relative;
+}
+
+.wrapper {
+    display: flex;
+    padding: var(--numbers-0, 0px);
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+}
+
+.title {
+    color: var(--text-base-primary, #14151a);
+    font-family: var(--typography-family-inter, Inter);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: var(--typography-line-height-caption-l, 20px);
+    letter-spacing: var(--typography-letter-spacing-caption-l, -0.1px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.description {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    align-self: stretch;
+    color: var(--text-base-secondary, rgba(15, 19, 36, 0.6));
+    font-family: var(--typography-family-inter, Inter);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: var(--typography-line-height-caption-m, 16px);
+    letter-spacing: var(--typography-letter-spacing-caption-m, 0px);
+}
+
+.icon-container {
+    position: absolute;
+    bottom: 22px; right: 22px;
+}
+
+.icon-card {
+    background: #f5f6f7;
+}
+
+.loyalty-card,
+.cashback-card,
+.discount-card {
+    background: #ffffff;
+    border: 1px solid #dee0e3;
+}

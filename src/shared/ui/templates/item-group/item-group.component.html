@@ -1,0 +1,8 @@
+<ng-content/>
+@if (signature()) {
+    <bsm-row [type]="'text'" [stroke]="'no'">
+        <bsm-text [type]="'caption-m'" [color]="'tertiary'">
+            {{ signature() }}
+        </bsm-text>
+    </bsm-row>
+}

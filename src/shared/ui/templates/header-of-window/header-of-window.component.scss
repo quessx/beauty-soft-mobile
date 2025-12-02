@@ -1,0 +1,30 @@
+:host {
+    display: flex;
+    width: 100%;
+    min-width: 320px;
+    padding: var(--measurements-gap-8, 8px) var(--measurements-gap-16, 16px) var(--measurements-gap-8, 8px) var(--measurements-gap-24, 24px);
+    align-items: center;
+    gap: var(--measurements-gap-20, 20px);
+    background: var(--background-surface-neutral, #F7F7F8);
+
+    /* Header mobile */
+    box-shadow: 0 2px 2px 0 var(--colors-gray-1a, rgba(10, 15, 41, 0.04));
+
+    .third-section {
+        margin-left: auto;
+    }
+
+    .second-section, .third-section, .first-section {
+        height: 36px;
+    }
+
+    .second-section, .third-section {
+        display: flex;
+        align-items: center;
+    }
+
+    @media (orientation: landscape) {
+        padding-left: 56px;
+    }
+
+}

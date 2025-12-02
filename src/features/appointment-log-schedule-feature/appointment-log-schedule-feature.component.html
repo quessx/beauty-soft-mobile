@@ -1,0 +1,14 @@
+<full-calendar [options]="calendarOptions" #calendar>
+    <ng-template #resourceLabelContent let-arg>
+        <bsm-employee-header [isLoading]="isLoading()" [model]="arg.resource"></bsm-employee-header>
+    </ng-template>
+
+    <ng-template #eventContent let-arg>
+        @if (arg.event.extendedProps.type === 'break') {
+            <beauty-appintment-log-schedule-break-card [event]="arg.event"></beauty-appintment-log-schedule-break-card>
+        } @else {
+            <beauty-calendate-card [model]="arg.event"></beauty-calendate-card>
+        }
+    </ng-template>
+</full-calendar>
+

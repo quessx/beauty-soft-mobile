@@ -1,0 +1,65 @@
+@use 'typography' as t;
+@use 'actions-wrapper-parent';
+
+:host ::ng-deep bsm-actions-wrapper {
+    & > div[action-cont] {
+        overflow: hidden;
+    }
+
+    & > div[header] span:last-child {
+        visibility: hidden;
+    }
+
+    & > div[cont] {
+        overflow: hidden;
+    }
+}
+
+div[scrollable] {
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+    overflow: auto;
+}
+
+bsm-calendar {
+    padding: 12px;
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 12px;
+}
+
+div[tab-menu] {
+    position: absolute;
+    bottom: 12px;
+    width: 100%;
+    color: var(--text-base-primary, #14151A);
+    text-align: center;
+    @include t.font(caption-l-medium);
+
+    display: flex;
+    padding: var(--numbers-2, 2px);
+    justify-content: center;
+    align-items: center;
+    gap: var(--numbers-2, 2px);
+    align-self: stretch;
+    border-radius: var(--measurements-radius-lg, 10px);
+    background: #EBECEE;
+
+    /* Shadows/xs */
+    box-shadow: 0 1px 2px 0 rgba(20, 21, 26, 0.05);
+
+    & > div {
+        display: flex;
+        padding: var(--numbers-4, 4px) var(--numbers-8, 8px);
+        justify-content: center;
+        align-items: center;
+        gap: var(--numbers-0, 0);
+        flex: 1 0 0;
+
+        &.selected {
+            border-radius: var(--measurements-radius-md, 8px);
+            background: var(--background-button-secondary, #FFF);
+        }
+    }
+}

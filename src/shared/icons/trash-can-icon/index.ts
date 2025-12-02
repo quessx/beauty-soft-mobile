@@ -1,0 +1,1 @@
+export { TrashCanIconComponent } from './trash-can-icon.component';

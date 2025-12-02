@@ -1,0 +1,1 @@
+export { SettingsIconComponent } from './settings-icon.component';

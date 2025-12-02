@@ -1,0 +1,29 @@
+:host {
+    display: flex;
+    padding: var(--measurements-gap-8, 8px) var(--measurements-gap-16, 16px);
+    gap: var(--measurements-gap-16, 16px);
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+}
+
+span {
+    color: var(--text-base-primary, #14151A);
+    /* Body S/Regular */
+    font-family: var(--typography-family-inter, Inter);
+    font-size: var(--typography-size-body-s, 16px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: var(--typography-line-height-body-s, 24px);
+    /* 150% */
+    letter-spacing: var(--typography-letter-spacing-body-s, -0.2px);
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+svg {
+    flex-shrink: 0;
+    color: transparent;
+}

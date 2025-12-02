@@ -1,0 +1,1 @@
+export type THeaderButtonState = "enabled" | "disabled" | "red";

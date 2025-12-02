@@ -1,0 +1,1 @@
+export { BillIconComponent } from './bill-icon.component';

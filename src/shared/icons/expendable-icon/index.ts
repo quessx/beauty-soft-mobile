@@ -1,0 +1,1 @@
+export { ExpendableIconComponent } from './expendable-icon.component';

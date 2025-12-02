@@ -1,0 +1,115 @@
+@if (texts.selectedAll) {
+    <mat-checkbox class="select-all" [checked]="modelSignal().isTotalSelected()"
+                  (change)="modelSignal().updateAll($event.checked)">
+        <span class="select-all-text">
+            {{ texts.selectedAll | translate }}
+        </span>
+    </mat-checkbox>
+}
+<cdk-accordion class="accordion" [class.mobile]="texts.isMobileGroupCheckbox" [multi]="multi">
+    @for (group of filteredGroups(); track group; let index = $index) {
+        @if (!group.hidden || (group?.hidden && !group.hidden())) {
+            <ng-container [ngTemplateOutlet]="showAccordionGroup"
+                          [ngTemplateOutletContext]="{
+                                $implicit: group,
+                                group: group,
+                                index: index,
+                              }">
+            </ng-container>
+        }
+    }
+</cdk-accordion>
+
+<ng-template #showAccordionGroup let-group="group" let-index="index" let-classGroup="classGroup">
+    <cdk-accordion-item #accordionItem="cdkAccordionItem" class="accordion-item" [ngClass]="classGroup">
+        <div class="accordion-item-header"
+             (click)="accordionItem.toggle()"
+             tabindex="0"
+             [attr.id]="'accordion-header-' + index"
+             [attr.aria-expanded]="accordionItem.expanded"
+             [attr.aria-controls]="'accordion-body-' + index"
+        >
+            @if (texts.isGroupCheckboxVisible) {
+                <mat-checkbox
+                    [checked]="!!group.items.length && ((group.selectedItems && group.selectedItems().length === group.items.length) || (group.selected && !!group.selected()))"
+                    (change)="modelSignal().updateGroup($event.checked, group.id, accordionItem)"
+                    (click)="$event.stopPropagation()"
+                ></mat-checkbox>
+            }
+            <div class="item-header-texts-container">
+                <span class="item-header-title">{{ group.label }}</span>
+                @if (texts.isGroupCountVisible) {
+                    <span
+                        class="item-header-description">{{ texts.countInGroup | translate:{ i: group.items.length } }}</span>
+                }
+
+            </div>
+            <svg beauty-expendable-icon class="icon" width="16" height="16" viewBox="0 0 20 20"
+                 [state]="(!accordionItem.expanded ? 'closed' : 'open')"></svg>
+        </div>
+        @if (accordionItem.expanded) {
+            <div class="accordion-item-body" role="region"
+                 [style.display]="accordionItem.expanded ? '' : 'none'"
+                 [attr.id]="'accordion-body-' + index"
+                 [attr.aria-labelledby]="'accordion-header-' + index"
+                 [ngClass]="{disabled: group.selected && !!group.selected()}"
+            >
+                <div class="accordion-item-body-row">
+                    @if (group.items.length > 0 || group.groups.length > 0) {
+                        @if (!texts.isMobileGroupCheckbox) {
+                            <mat-checkbox class="hidden"></mat-checkbox>
+                            <div class="first-column column-title">{{ texts.colums.service | translate }}</div>
+                            <div class="second-column column-title">{{ texts.colums.duration | translate }}</div>
+                        }
+                    } @else {
+                        <div class="empty-state">
+                            {{ getEmptyText(group.id) || 'checkbox.empty.services' | translate }}
+                        </div>
+                    }
+                </div>
+
+                @if (group.items.length > 0) {
+                    @for (item of getFilteredItems(group.items); let indexItem = $index; track item.id) {
+                        @if (!item.hidden || (item?.hidden && !item.hidden())) {
+                            <div class="accordion-item-body-row" (click)="onRowClick(matCheckBox)">
+                                <mat-checkbox
+                                    [checked]="!!item.selected() && item.selected() === item.id"
+                                    (change)="onChange($event, group, item)"
+                                    (click)="onRowClick(matCheckBox)"
+                                    #matCheckBox
+                                ></mat-checkbox>
+                                <div class="first-column item-header-texts-container">
+                                    <span class="item-label">{{ item.label }}</span>
+                                    <span class="item-price"><beauty-amount [value]="item.price"></beauty-amount>
+                                        {{ item.currency === 'RUB' ? '₽' : item.currency }}</span>
+                                </div>
+                                <div class="second-column">
+                                    <span class="duration">{{ item.duration | duration }}</span>
+                                </div>
+                            </div>
+                            @if (!$last) {
+                                <mat-divider></mat-divider>
+                            }
+                        }
+                    }
+                } @else if (group?.groups?.length > 0) {
+                    @if (getGroups(group).length > 0) {
+                        @for (groupMobile of getGroups(group); track groupMobile.id) {
+                            @if (groupMobile?.groups?.length || getFilteredItems(groupMobile?.items || [])?.length) {
+                                <ng-container
+                                    [ngTemplateOutlet]="showAccordionGroup"
+                                    [ngTemplateOutletContext]="{
+                                    $implicit: groupMobile,
+                                    group: groupMobile,
+                                    index: index + '_group_' + groupMobile.id,
+                                    classGroup: 'group-accordion'
+                                  }">
+                                </ng-container>
+                            }
+                        }
+                    }
+                }
+            </div>
+        }
+    </cdk-accordion-item>
+</ng-template>

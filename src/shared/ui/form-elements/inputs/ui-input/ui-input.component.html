@@ -1,0 +1,15 @@
+<ion-input 
+    [formControl]="control"
+    [placeholder]="placeholder()"
+    type="{{type()}}"
+    enterkeyhint="next"
+    autocomplete="{{autocomplete()}}"
+    class="ui-input"
+>
+    @if (type() === 'password') {
+        <ion-input-password-toggle slot="end"
+            show-icon="assets/ion-icon/eye-line.svg"
+            hide-icon="assets/ion-icon/eye-off-line.svg"
+        ></ion-input-password-toggle>
+    }
+</ion-input>

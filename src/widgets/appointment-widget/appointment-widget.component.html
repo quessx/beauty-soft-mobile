@@ -1,0 +1,8 @@
+@defer (when isLoading()) {
+    <bsm-actions-wrapper #actionsWrapper [actionVariants]="actionVariants()" (cancel)="onCancel()" (startCancel)="onStartCancel()" (confirm)="onSave()" [isConfirmDisabled]="!isConfirmDisabled()">
+        <ng-template #columnType1>
+            <router-outlet></router-outlet>
+            <router-outlet name="secondary"></router-outlet>
+        </ng-template>
+    </bsm-actions-wrapper>
+}

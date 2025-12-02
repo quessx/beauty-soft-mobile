@@ -1,0 +1,1 @@
+export { CoffeeBreakIconComponent } from './coffee-break-icon.component';

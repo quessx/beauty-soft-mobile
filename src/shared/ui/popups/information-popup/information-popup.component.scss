@@ -1,0 +1,48 @@
+:host {
+    inset: 0;
+    position: absolute;
+    background: var(--colors-gray-5a, rgba(10, 15, 41, 0.25));
+    z-index: 10;
+    padding-inline: 16px;
+}
+
+:host > div {
+    position: relative;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    max-width: 100%;
+    padding: var(--measurements-gap-12, 12px) var(--measurements-gap-12, 12px) var(--measurements-gap-16, 16px) var(--measurements-gap-12, 12px);
+    justify-content: center;
+    align-items: center;
+    gap: var(--measurements-gap-12, 12px);
+    border-radius: var(--measurements-radius-xxxl, 24px);
+    background: var(--background-surface-default, #FFF);
+
+    align-items: flex-start;
+    gap: var(--measurements-gap-16, 16px);
+    flex: 1 0 0;
+}
+
+svg {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+}
+
+div[text] {
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+bsm-text {
+    ::ng-deep span {
+        max-width: 100%;
+        word-break: break-word;
+    }
+}
+
+bsm-text:last-child {
+    padding: initial;
+}

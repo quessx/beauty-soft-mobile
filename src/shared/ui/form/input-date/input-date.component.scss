@@ -1,0 +1,46 @@
+@use 'typography' as t;
+
+:host {
+    display: flex;
+    height: 32px;
+    min-height: 32px;
+    padding: var(--measurements-gap-0, 0);
+    align-items: center;
+    flex: 1 0 0;
+
+    border-radius: var(--measurements-radius-lg, 10px);
+    background: var(--background-surface-neutral, #F7F7F8);
+}
+
+input {
+    display: flex;
+    height: 32px;
+    align-items: center;
+    justify-content: center;
+    gap: var(--measurements-gap-0, 0);
+    flex: 1 0 0;
+    @include t.font('body-s');
+
+    // Убираем лишние отступы
+    margin: 0;
+
+    // Для WebKit браузеров (Chrome, Safari)
+    &::-webkit-calendar-picker-indicator {
+        padding: 0;
+        margin: 0;
+        width: 16px;
+        height: 16px;
+    }
+
+    // Для Firefox
+    &::-moz-calendar-picker-indicator {
+        padding: 0;
+        margin: 0;
+    }
+}
+
+@media (max-width: 500px) {
+    input {
+        max-width: 120px;
+    }
+}

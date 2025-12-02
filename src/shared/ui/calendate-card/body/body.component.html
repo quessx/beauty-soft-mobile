@@ -1,0 +1,5 @@
+@for (service of eventModel()?.getItems(); track service.name) {
+    <p class="service-item">{{ service.name }}</p>
+}
+<p class="client-info">{{ eventModel()?.getClientName() }}</p>
+<p class="client-info">{{ eventModel()?.getClientPhone() }}</p>

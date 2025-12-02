@@ -1,0 +1,52 @@
+@use 'typography' as t;
+
+input, .date {
+    display: flex;
+    width: 100%;
+    height: 32px;
+    padding: var(--measurements-gap-4, 4px) var(--measurements-gap-8, 8px);
+    align-items: center;
+    gap: var(--measurements-gap-0, 0);
+    flex: 1 0 0;
+    justify-content: center;
+    justify-items: center;
+    text-align: center;
+    border-radius: var(--measurements-radius-lg, 10px);
+    background: var(--background-surface-neutral, #F7F7F8);
+    @include t.font('body-s');
+    user-select: none !important;
+    cursor: pointer;
+    color: transparent;
+    text-shadow: 0 0 0 black;
+    caret-color: transparent; /* Скрывает мигающий курсор */
+    -moz-user-select: none !important;
+    -webkit-user-select: none !important;
+    -ms-user-select: none !important;
+
+    & > div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    // Убираем лишние отступы
+    margin: 0;
+
+    // Для WebKit браузеров (Chrome, Safari)
+    &::-webkit-calendar-picker-indicator {
+        padding: 0;
+        margin: 0;
+        width: 16px;
+        height: 16px;
+    }
+
+    // Для Firefox
+    &::-moz-calendar-picker-indicator {
+        padding: 0;
+        margin: 0;
+    }
+}
+:host[disabled] {
+    cursor: not-allowed;
+    pointer-events: none;
+}

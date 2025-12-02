@@ -1,0 +1,1 @@
+export { SpaceDigitsPipe } from './space-digits.pipe';

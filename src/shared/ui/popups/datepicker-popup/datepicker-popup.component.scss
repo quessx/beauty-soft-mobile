@@ -1,0 +1,30 @@
+@use "typography";
+
+:host {
+    .popup-container {
+        width: fit-content;
+    }
+
+    ::ng-deep {
+        .t-calendar-title {
+            @include typography.font(caption-l-medium);
+
+            order: -1;
+            color: var(--text-base-primary, #14151a);
+        }
+
+        tui-spin-button {
+            justify-content: normal;
+        }
+
+        tui-spin-button button:first-child {
+            margin-left: auto;
+        }
+
+        .t-cell[data-range='active'] {
+            border-radius: var(--measurements-radius-md, 8px);
+            border: 1px solid #0095ff;
+            background: var(--background-button-secondary, #fff);
+        }
+    }
+}

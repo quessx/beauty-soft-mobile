@@ -1,0 +1,26 @@
+<div class="container" [ngClass]="{
+        'icon-card': data().type === PaymentCardDataType.IconCard,
+        'loyalty-card': data().type === PaymentCardDataType.LoyaltyCard,
+        'cashback-card': data().type === PaymentCardDataType.CashbackCard,
+        'discount-card': data().type === PaymentCardDataType.DiscountCard
+    }">
+    <div class="wrapper">
+        <span class="title">
+            {{ data().title }}
+        </span>
+        <div class="description">
+            @if (data().type === PaymentCardDataType.LoyaltyCard) {
+                @for (line of data().description; track line) {
+                    <span>{{ line }}</span>
+                }
+            } @else {
+                {{ data().description }}
+            }
+        </div>
+    </div>
+    @if (data().type === PaymentCardDataType.IconCard) {
+        <div class="icon-container">
+            <ng-content></ng-content>
+        </div>
+    }
+</div>

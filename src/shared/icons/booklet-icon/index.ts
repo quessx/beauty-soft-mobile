@@ -1,0 +1,1 @@
+export { BookletIconComponent } from './booklet-icon.component';

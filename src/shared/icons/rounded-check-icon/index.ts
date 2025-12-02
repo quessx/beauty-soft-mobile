@@ -1,0 +1,1 @@
+export { RoundedCheckIconComponent } from './rounded-check-icon.component';

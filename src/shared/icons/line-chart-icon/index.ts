@@ -1,0 +1,1 @@
+export { LineChartIconComponent } from './line-chart-icon.component';

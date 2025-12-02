@@ -1,0 +1,1 @@
+export { SuccessInfoSuccessIconComponent } from './success-info-success-icon.component';

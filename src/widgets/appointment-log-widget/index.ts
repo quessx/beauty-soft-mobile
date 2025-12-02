@@ -1,0 +1,1 @@
+export { AppointmentLogWidgetComponent } from './appointment-log-widget.component';

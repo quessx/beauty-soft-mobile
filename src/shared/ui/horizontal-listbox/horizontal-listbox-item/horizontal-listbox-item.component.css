@@ -1,0 +1,32 @@
+:host {
+    display: flex;
+    padding: var(--numbers-1, 1px) var(--numbers-3, 3px);
+    align-items: center;
+    border-radius: var(--measurements-radius-sm, 6px);
+    border: 1px solid var(--border-base-alpha, rgba(10, 15, 41, 0.08));
+    background: var(--background-badge-gray, #e9eaec);
+    margin-left: var(--numbers-4, 4px);
+}
+
+:host .name {
+    color: var(--text-base-secondary, rgba(15, 19, 36, 0.6));
+    text-align: center;
+
+    /* Caption M/Medium */
+    font-family: var(--typography-family-inter, Inter);
+    font-size: var(--typography-size-caption-m, 12px);
+    font-style: normal;
+    font-weight: 500;
+    line-height: var(--typography-line-height-caption-m, 16px); /* 133.333% */
+    letter-spacing: var(--typography-letter-spacing-caption-m, 0px);
+    padding: var(--numbers-0, 0px) var(--numbers-3, 3px);
+
+    max-width: 326px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+:host .close-icon {
+    cursor: pointer;
+}

@@ -1,0 +1,20 @@
+:host {
+    line-height: 0;
+    display: block;
+    position: relative;
+    width: 32px;
+}
+
+svg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: var(--background-badge-gray, #E9EAEC);
+    border-radius: 50%;
+    padding: 2px;
+    color: var(--text-base-primary, #14151A);
+    border: 2px solid var(--background-surface-neutral, #F7F7F8);
+    box-sizing: border-box;
+    width: 14px;
+    height: 14px;
+}

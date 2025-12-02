@@ -1,0 +1,1 @@
+export { WhiteFlattenBigComponent } from './white-flatten-big.component';

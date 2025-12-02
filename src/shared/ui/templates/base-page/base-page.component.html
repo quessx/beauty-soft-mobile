@@ -1,0 +1,28 @@
+
+@if (!!header) {
+    <ng-container *ngTemplateOutlet="header"></ng-container>
+} @else if (!!firstSectionHeader || !!secondSectionHeader || !!thirdSectionHeader) {
+    <header-of-window>
+        
+        <ng-template #firstSection>
+            @if (!!firstSectionHeader) {
+                <ng-container *ngTemplateOutlet="firstSectionHeader"></ng-container>
+            } @else {
+                <svg bsm-back-icon class="back-icon" (click)="backEvent()"></svg>
+            }
+        </ng-template>
+        
+        
+        <ng-template #secondSection>
+            <ng-container *ngTemplateOutlet="secondSectionHeader"></ng-container>
+        </ng-template>
+        <ng-template #thirdSection>
+            <ng-container *ngTemplateOutlet="thirdSectionHeader"></ng-container>
+        </ng-template>
+    </header-of-window>
+}
+
+<body-in-page>
+    <ng-content></ng-content>
+</body-in-page>
+

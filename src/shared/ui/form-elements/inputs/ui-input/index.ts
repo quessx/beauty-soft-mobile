@@ -1,0 +1,1 @@
+export { UiInputComponent } from './ui-input.component';

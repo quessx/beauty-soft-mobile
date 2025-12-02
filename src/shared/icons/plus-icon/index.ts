@@ -1,0 +1,1 @@
+export { PlusIconComponent } from './plus-icon.component';

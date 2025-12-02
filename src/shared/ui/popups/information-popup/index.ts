@@ -1,0 +1,1 @@
+export { InformationPopupService } from './information-popup.service';

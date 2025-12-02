@@ -1,0 +1,31 @@
+<div class="popup-container" #cont>
+    <div (click)="$event.stopPropagation()" class="w-100 input-container">
+        <input type="text" [placeholder]="placeholder()" [mask]="usedMask" beauty-input class="search-input" [formControl]="control">
+        @if ((control.value || '').length > 0) {
+            <svg beauty-close-icon class="clear-icon" (click)="clear()"></svg>
+        }
+    </div>
+    <div class="options-container">
+        @for (option of _model(); let idx = $index; track idx;) {
+            <div class="option" (mousedown)="onMousedown($event, option)">
+                <span class="wrap" [ngClass]="{
+                    'selected': selectedId && selectedId() == option.id
+                }">
+                    <div class="label-container">
+                        <span class="text-truncate">
+                            {{option.label}}
+                        </span>
+                        @if (option?.metadata?.second_row) {
+                            <span class="text-truncate">
+                                {{option.metadata.second_row}}
+                            </span>
+                        }
+                    </div>
+                    @if (selectedId && selectedId() === option.id) {
+                        <svg beauty-check-mark-icon></svg>
+                    }
+                </span>
+            </div>
+        }
+    </div>
+</div>

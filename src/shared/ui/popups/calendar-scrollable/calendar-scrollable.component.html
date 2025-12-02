@@ -1,0 +1,15 @@
+<bsm-actions-wrapper [centerText]="'calendar.title' | translate" (cancel)="onCancel()" [actionVariants]="[0, undefined]">
+    <div scrollable>
+        @for ( year of years; track year ) {
+            @for ( month of months; track month ) {
+                <div [attr.year]="year" [attr.month]="month" #calendar>
+                    <bsm-calendar [date]="{ year: year, month: month }" [selectedDate]="_selectedDate" />
+                </div>
+            }
+        }
+    </div>
+    <div tab-menu #tabMenu>
+        <div day (click)="onClick('day')">{{'calendar.type.day' | translate}}</div>
+        <div week (click)="onClick('week')">{{'calendar.type.week' | translate}}</div>
+    </div>
+</bsm-actions-wrapper>

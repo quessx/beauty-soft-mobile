@@ -1,0 +1,1 @@
+export { IndexedDbService } from './indexed-bd.service';

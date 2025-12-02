@@ -1,0 +1,1 @@
+export { FilterIconComponent } from './filter-icon.component';

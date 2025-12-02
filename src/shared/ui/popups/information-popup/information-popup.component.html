@@ -1,0 +1,11 @@
+<div #cont>
+    @if(isSuccess) {
+        <svg beauty-success-info-success-icon />
+    } @else {
+        <svg beauty-success-info-error-icon />
+    }
+    <div text>
+        <bsm-text [type]="'body-l-medium'" [color]="'primary'">{{title | translate}}</bsm-text>
+        <bsm-text [type]="'caption-l'" [color]="'tertiary'">{{description | translate}}</bsm-text>
+    </div>
+</div>

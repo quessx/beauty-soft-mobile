@@ -1,0 +1,53 @@
+@use 'typography' as t;
+
+:host {
+    display: flex;
+    width: 160px;
+    height: 96px;
+    padding: 8px 12px 12px 12px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--measurements-gap-8, 8px);
+    box-sizing: border-box;
+    flex-shrink: 0;
+    justify-content: space-between;
+    @include t.font(caption-l);
+
+    // overflow: hidden;
+
+    border-radius: 8px;
+    border: 1px solid var(--background-surface-neutral, #F7F7F8);
+    background: var(--background-surface-neutral, #F7F7F8);
+}
+
+:host.selected {
+    border-color: var(--border-action-normal, #DEE0E3);
+    background: white;
+
+    svg {
+        visibility: visible;
+    }
+}
+
+span:first-child {
+    color: var(--text-base-primary, #14151A);
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    align-self: stretch;
+    overflow: hidden;
+    color: var(--text-base-primary, #14151A);
+    text-overflow: ellipsis;
+}
+
+span:last-child {
+    color: var(--text-base-secondary, rgba(15, 19, 36, 0.60));
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+}
+
+svg {
+    visibility: hidden;
+}

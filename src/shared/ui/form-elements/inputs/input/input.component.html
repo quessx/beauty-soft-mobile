@@ -1,0 +1,13 @@
+<div class="ui-input">
+    @if (inputTypeClass.isNeedLoupeIcon) {
+        <svg class="loupe-icon" bsm-loupe-icon></svg>
+    }
+    @if (inputTypeClass.isPercentIcon && !this.valueSignal()) {
+        <svg class="percent-icon" beauty-percent-icon></svg>
+    }
+    <input #inputElement [class.percent-input]="isPercent()" [placeholder]="placeholder" [disabled]="disabled" [value]="value()" (input)="handleInput($event)" [inputMode]="inputMode" [size]="inputSize()" />
+    @if (inputTypeClass.isNeedRubIcon) {
+        <svg class="rub-icon" beauty-ruble-icon></svg>
+    }
+</div>
+

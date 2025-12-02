@@ -1,0 +1,15 @@
+<span class="amount">
+    @if(!!prefix) {
+        {{prefix}}
+    }
+    {{ formattedValue}}
+    @if (useAltPostfix && postfix) {
+        @if (postfix === 'RUB') {
+            ₽
+        } @else {
+            {{postfix}}
+        }
+    } @else if(!!postfix) {
+        {{postfix}}
+    }
+</span>

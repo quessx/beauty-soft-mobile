@@ -1,0 +1,17 @@
+:host {
+    display: flex;
+    width: 398px;
+    height: 751px;
+    min-height: 548px;
+    padding: var(--measurements-gap-20, 20px) var(--measurements-gap-12, 12px) var(--measurements-gap-8, 8px) var(--measurements-gap-12, 12px);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+
+    border-radius: var(--measurements-radius-xxl, 16px) var(--measurements-radius-xxl, 16px) var(--measurements-radius-0, 0) var(--measurements-radius-0, 0);
+    background: var(--background-surface-default, #FFF);
+}
+
+p-skeleton {
+    flex: 0 0 14px !important;
+}

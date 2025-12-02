@@ -1,0 +1,24 @@
+<div class="popup-container" #cont>
+    <div (click)="$event.stopPropagation()" class="w-100">
+        <input type="text" beauty-input class="w-100" (keypress)="onKeypressWithInput($event)" (input)="onInput($event)">
+        <svg beauty-expendable-icon width="16" class="icon" height="16" viewBox="0 0 20 20" [state]="'open'"></svg>
+    </div>
+    <div class="scrollbar-container">
+        <div class="options-container">
+            @for (option of displayedModels(); let idx = $index; track idx;) {
+                <div class="option" (mousedown)="onMousedown($event, option)">
+                    <span class="wrap" [ngClass]="{
+                        'selected': selectedId && selectedId()?.id == option.id
+                    }">
+                        <span class="text-truncate">
+                            {{option.label | translate}}
+                        </span>
+                        @if (selectedId && selectedId()?.id === option.id) {
+                            <svg beauty-check-mark-icon></svg>
+                        }
+                    </span>
+                </div>
+            }
+        </div>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+@use 'typography' as t;
+
+:host {
+    position: relative;
+    width: 100%;
+}
+
+.search-input {
+    padding-right: 32px; /* Увеличиваем отступ для иконки */
+    width: 100%;
+    box-sizing: border-box;
+    @include t.font(body-s);
+}
+
+.clear-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    display: block; /* Всегда показываем иконку */
+}
+
+input::placeholder {
+    color: var(--text-base-tertiary, rgba(13, 17, 38, 0.4));
+}

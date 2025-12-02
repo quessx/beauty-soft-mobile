@@ -1,0 +1,11 @@
+<div cont #scrollContainer>
+    @for (item of items(); track item) {
+        <span #itemEl item [class.active]="isActive(item)" (click)="onItemClick(item)" class="active">
+            @if (isActive(item)) {
+                -{{ item }}%
+            } @else {
+                {{ item }}
+            }
+        </span>
+    }
+</div>

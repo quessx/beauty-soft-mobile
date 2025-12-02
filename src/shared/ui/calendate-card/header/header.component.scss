@@ -1,0 +1,55 @@
+:host {
+    display: flex;
+    width: 100%;
+    padding: var(--measurements-gap-2, 2px) var(--measurements-gap-6, 6px);
+    justify-content: space-between;
+    align-items: flex-start;
+    background: var(--background-button-destructive-disabled, #FCE5E4);
+    line-height: 0;
+
+    & > div:last-child {
+        display: flex;
+    }
+}
+
+svg[beauty-comment-icon] {
+    margin-right: 4px;
+}
+
+svg {
+    fill: none;
+    width: 12px;
+    height: 12px;
+}
+
+:host-context(.bg-confirmed) :host {
+    background: var(--colors-magenta-3, #FFD7FF);
+
+    div:first-child > svg {
+        color: var(--colors-magenta-10, #A0A);
+    }
+}
+
+:host-context(.bg-arrived) :host {
+    background: var(--background-badge-green, #D1FAE4);
+
+    div:first-child > svg {
+        color: var(--colors-green-8, #26BD6C);
+    }
+}
+
+:host-context(.bg-not_arrived) {
+    background: var(--background-button-destructive-disabled, #FCE5E4);
+
+    div:first-child > svg {
+        color: var(--colors-red-8, #E6483D);
+    }
+}
+
+:host-context(.bg-waiting) {
+    background: #faf7d1;
+
+    div:first-child > svg {
+        color: #f89500;
+    }
+}

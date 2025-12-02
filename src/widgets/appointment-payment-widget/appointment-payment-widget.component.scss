@@ -1,0 +1,129 @@
+@use 'typography' as t;
+
+:host {
+    max-height: 100%;
+    display: block;
+    overflow-y: auto;
+
+    &.disabled {
+        pointer-events: none;
+        opacity: 0.5;
+    }
+}
+
+div[promotions] {
+    display: flex;
+    padding: 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: stretch;
+
+    & > div {
+        display: flex;
+
+        &:has(bsm-promo-item) {
+            margin-bottom: 16px;
+        }
+    }
+
+    div[actions] {
+        display: flex;
+        padding: var(--measurements-gap-2, 2px);
+        align-items: center;
+        gap: 4px;
+        align-self: stretch;
+        border-radius: 10px;
+        background: #F7F7F7;
+
+        span {
+            @include t.font(caption-l);
+            color: var(--text-base-secondary, rgba(15, 19, 36, 0.60));
+
+            display: flex;
+            padding: var(--measurements-gap-4, 4px) var(--measurements-gap-12, 12px);
+            justify-content: center;
+            align-items: center;
+            flex-grow: 1;
+
+            &.selected {
+                border-radius: var(--measurements-radius-md, 8px);
+                background: #FFF;
+                color: var(--text-base-primary, #14151A);
+            }
+        }
+    }
+
+    & div:has(bsm-promo-item) {
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        overflow-x: auto;
+        width: 100%;
+        column-gap: 16px;
+    }
+}
+
+div[pay] {
+    display: flex;
+    padding: 16px;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-self: stretch;
+
+    color: var(--text-base-primary, #14151A);
+    @include t.font(body-s-medium);
+
+    & > div {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        span::after {
+            content: ' ₽';
+        }
+
+        span[initial] {
+            text-decoration: line-through #717684 solid 2px;
+            color: var(--text-base-secondary, rgba(15, 19, 36, 0.60));
+        }
+    }
+}
+
+div[pay-type] {
+    display: flex;
+    padding: 16px;
+    align-items: flex-start;
+    gap: 16px;
+    align-self: stretch;
+    @include t.font(body-s);
+
+    & > div {
+        display: flex;
+        padding: var(--measurements-gap-16, 16px);
+        flex-direction: column;
+        align-items: flex-start;
+        border-radius: 8px;
+        box-sizing: border-box;
+        align-self: stretch;
+        justify-self: stretch;
+        flex-grow: 1;
+        flex-basis: 0;
+        flex-shrink: 0;
+        row-gap: 8px;
+    }
+
+    div[cash] {
+        background: var(--colors-green-1, #EDFDF4);
+    }
+
+    div[card] {
+        background: var(--colors-blue-1, #F0F4FE);
+
+        svg[beauty-bank-card-icon] {
+            width: 32px;
+            height: 32px;
+            color: #4778F5;
+        }
+    }
+}

@@ -1,0 +1,1 @@
+export { ArrowUpLineIconComponent } from './arrow-up-line-icon.component';

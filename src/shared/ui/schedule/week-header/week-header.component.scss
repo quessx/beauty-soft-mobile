@@ -1,0 +1,39 @@
+:host {
+    display: flex;
+    padding: var(--measurements-gap-0, 0);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--measurements-gap-0, 0);
+
+    .date {
+        color: var(--text-base-primary, #14151A);
+        text-align: center;
+
+        /* Caption M/Regular */
+        font-family: var(--typography-family-inter, Inter);
+        font-size: var(--typography-size-caption-m, 12px);
+        font-style: normal;
+        font-weight: 400;
+        line-height: var(--typography-line-height-caption-m, 16px);
+        /* 133.333% */
+        letter-spacing: var(--typography-letter-spacing-caption-m, 0);
+    }
+
+    .week-day {
+        overflow: hidden;
+        color: var(--text-base-tertiary, rgba(13, 17, 38, 0.40));
+        text-align: center;
+        text-overflow: ellipsis;
+
+        /* Caption M/Regular */
+        font-family: var(--typography-family-inter, Inter);
+        font-size: var(--typography-size-caption-m, 12px);
+        font-style: normal;
+        font-weight: 400;
+        line-height: var(--typography-line-height-caption-m, 16px);
+        /* 133.333% */
+        letter-spacing: var(--typography-letter-spacing-caption-m, 0);
+        text-transform: capitalize;
+    }
+}

@@ -1,0 +1,1 @@
+export { CloseIconComponent } from './close-icon.component';

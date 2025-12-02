@@ -1,0 +1,7 @@
+<p-avatar [image]="avatar" [shape]="shape()" [size]="size()" (onImageError)="onImageError($event)"></p-avatar>
+<div (click)="imageInput.click()">
+    <div class="pencil-cont">
+        <svg beauty-pencil-icon />
+    </div>
+</div>
+<input #imageInput type="file" accept="image/*" (change)="onChangeImage($event)">

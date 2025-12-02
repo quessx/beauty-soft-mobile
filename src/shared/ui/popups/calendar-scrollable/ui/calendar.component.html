@@ -1,0 +1,10 @@
+<div header>
+    <span>{{date().format('MMMM')}} {{date().year()}}</span>
+</div>
+<div weeks>
+    @for (weekday of daysShort; track $index) {
+        <span>{{weekday}}</span>
+    }
+</div>
+
+<div dates #dates></div>

@@ -1,0 +1,40 @@
+.success-information-container {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -85px;
+    opacity: 1;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    height: fit-content;
+    background: var(--bg-white-color);
+    border: 1px solid var(--border-success-info-popup);
+    box-shadow: 0px 10px 16px -3px rgba(20, 21, 26, 0.08);
+    border-radius: 20px;
+    padding: 0 10px;
+    cursor: default;
+
+    z-index: 11;
+}
+
+.icon {
+    margin-right: 20px;
+}
+
+.info-text {
+    display: flex;
+    width: 202px;
+    flex-direction: column;
+    align-items: flex-start;
+
+    span {
+        color: var(--text-base-primary, #14151A);
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 26px;
+        letter-spacing: -0.2px;
+    }
+}

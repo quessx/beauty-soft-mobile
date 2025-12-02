@@ -1,0 +1,61 @@
+@use 'styles/defaults.scss';
+@use 'styles/variables.scss';
+@use "tailwindcss";
+@use 'styles/router-anim.scss';
+@plugin "tailwindcss-primeui";
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,600;1,600&display=swap');
+@import '@ionic/angular/css/core.css';
+@import "primeicons/primeicons.css";
+/* Basic CSS for apps built with Ionic */
+@import '@ionic/angular/css/normalize.css';
+@import '@ionic/angular/css/typography.css';
+@import '@ionic/angular/css/structure.css';
+
+/* Optional CSS utils that can be commented out */
+@import '@ionic/angular/css/padding.css';
+@import '@ionic/angular/css/float-elements.css';
+@import '@ionic/angular/css/text-alignment.css';
+@import '@ionic/angular/css/text-transformation.css';
+@import '@ionic/angular/css/flex-utils.css';
+@import '@ionic/angular/css/display.css';
+
+
+:root {
+    --semantic-neutral-2: #E9EAEC;
+    --ion-font-family: var(--typography-family-inter, Inter);
+}
+
+.text-truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+* {
+    user-select: none;
+}
+
+body * {
+    box-sizing: border-box;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent !important;
+    -webkit-focus-ring-color: transparent !important;
+}
+
+.hidden {
+    visibility: hidden !important;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.p-inputtext, .p-select-label {
+    line-height: var(--typography-line-height-body-s, 24px) !important;
+}
+
+beauty-nav-item {
+    cursor: pointer;
+}

@@ -1,0 +1,31 @@
+<bsm-right-column-line [cssClasses]="'time'">
+    <input
+        type="time"
+        [value]="startTimeValue"
+        [disabled]="disabled"
+        (change)="onStartTimeChange($event)"
+        class="time-input start-time"
+        [placeholder]="placeholder"
+        min="00:00"
+        max="23:00"
+        [step]="stepAttr"
+        aria-label="Start time"
+        (click)="onStartTimeClick($event)"
+        data-format="24h">
+
+    <svg class="separator" bsm-vector-icon></svg>
+
+    <input
+        type="time"
+        [value]="endTimeValue"
+        [disabled]="disabled"
+        (change)="onEndTimeChange($event)"
+        class="time-input end-time"
+        [placeholder]="placeholder"
+        min="00:00"
+        max="23:00"
+        [step]="stepAttr"
+        aria-label="End time"
+        (click)="onEndTimeClick($event)"
+        data-format="24h">
+</bsm-right-column-line>

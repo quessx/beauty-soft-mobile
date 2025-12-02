@@ -1,0 +1,136 @@
+@use 'typography' as t;
+
+:host {
+    user-select: none;
+}
+
+.template-background-comment {
+    display: flex;
+    min-height: 56px;
+    padding: var(--measurements-gap-0, 0);
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--measurements-gap-0, 0);
+    align-self: stretch;
+
+    ::ng-deep bsm-template-left-column-card {
+        bsm-left-column-for-line {
+            padding: 10px 16px;
+            textarea {
+                width: 100%;
+                @include t.font('body-s');
+
+                &::placeholder {
+                    color: var(--text-base-tertiary, rgba(13, 17, 38, 0.40));
+
+                    @include t.font('body-s');
+                }
+            }
+        }
+    }
+}
+
+::ng-deep .comment-line-column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--measurements-gap-4, 4px);
+    flex: 1 0 0;
+}
+.right-column-time {
+    display: flex;
+    height: auto;
+    max-height: 32px;
+    padding: var(--measurements-gap-0, 0);
+    justify-content: flex-end;
+    align-items: center;
+    gap: var(--measurements-gap-1, 1px);
+    flex: 1 0 0;
+}
+.comment {
+    display: flex;
+    padding: var(--numbers-0, 0);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--measurements-gap-8, 8px);
+    flex: 1 0 0;
+
+    ::ng-deep .ui-input {
+        display: flex;
+        padding: var(--numbers-10, 10px) var(--numbers-12, 12px);
+        align-items: center;
+        gap: var(--numbers-0, 0);
+        flex: 1 0 0;
+        align-self: stretch;
+
+        border-radius: var(--measurements-radius-xxl, 16px);
+        background: var(--background-input-normal, #FFF);
+        border: none;
+
+        input {
+            display: flex;
+            padding: var(--numbers-0, 0);
+            align-items: center;
+            gap: var(--numbers-4, 4px);
+            flex: 1 0 0;
+        }
+
+        input::placeholder {
+            color: var(--text-base-tertiary, rgba(13, 17, 38, 0.40));
+
+            @include t.font('body-s');
+        }
+    }
+}
+
+.divider-bot {
+    margin: 0;
+    background-color: #F7F7F8;
+}
+
+.disabled-form ::ng-deep {
+    pointer-events: none;
+}
+
+::ng-deep bsm-template-line {
+    display: flex;
+    padding: var(--measurements-gap-12, 12px) var(--measurements-gap-16, 16px);
+    align-items: center;
+    gap: var(--measurements-gap-16, 16px);
+    align-self: stretch;
+}
+
+/* Multiline ellipsis for readonly textarea (clamp to max 3 rows) */
+textarea.comment[readonly] {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3; /* match [cdkAutosizeMaxRows] in template */
+
+    /* ensure wrapping and sensible word breaks */
+    white-space: normal;
+    word-break: break-word;
+}
+
+/* Small decorative ellipsis fallback for browsers that support pseudo-elements on textarea */
+textarea.comment[readonly]::after {
+    content: '...';
+    position: absolute;
+    right: 12px;
+    bottom: 6px;
+    color: var(--text-base-tertiary, rgba(13,17,38,0.4));
+    background: transparent;
+    pointer-events: none;
+    font-size: 16px;
+    /* hide if not supported or if not necessary; some browsers ignore ::after on textarea */
+}
+
+/* Ensure the textarea can be positioned relative for the pseudo-element */
+bsm-left-column-for-line .comment textarea.comment,
+textarea.comment {
+    position: relative;
+}
+
+beauty-input-date {
+    width: 100%;
+}

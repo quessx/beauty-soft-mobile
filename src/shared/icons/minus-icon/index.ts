@@ -1,0 +1,1 @@
+export { MinusIconComponent } from './minus-icon.component';

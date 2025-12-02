@@ -1,0 +1,25 @@
+<div [@showPopup]="showPopupState" action-cont>
+    <div header #anchor>
+        <bsm-header-button
+            [text]="typeof actionVariants[0] === 'number' ? ('actions_wrapper.cancel.' + actionVariants[0] | translate) : ''"
+            [withIcon]="actionVariants[0] === 2"
+            (click)="onCancel()"
+        />
+        <bsm-text [color]="'primary'" [type]="'body-s-medium'">{{ centerText }}</bsm-text>
+        <bsm-header-button
+            [text]="typeof actionVariants[1] === 'number' ? ('actions_wrapper.confirm.' + actionVariants[1] | translate) : ''"
+            [withIcon]="actionVariants[0] === 2"
+            (click)="confirm.emit()"
+        />
+    </div>
+    <div>
+        <ng-content></ng-content>
+        @if (!!columnType1) {
+            <div columnType1 (scroll)="columnScroll($event)">
+                <ng-container *ngTemplateOutlet="columnType1"></ng-container>
+            </div>
+        }
+    </div>
+
+    <svg beauty-arrow-down-icon/>
+</div>

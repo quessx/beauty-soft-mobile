@@ -1,0 +1,24 @@
+:host {
+    height: 32px;
+    width: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--measurements-radius-full, 999px);
+    background: var(--colors-gray-2, #E9EAEC);
+}
+
+svg {
+    color: var(--text-base-primary, #14151A);
+}
+
+:host.active::after {
+    content: '';
+    right: 2px;
+    top: 2px;
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: var(--colors-red-8, #E6483D);
+    border-radius: 50%;
+}

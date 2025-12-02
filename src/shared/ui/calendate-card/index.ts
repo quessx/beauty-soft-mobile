@@ -1,0 +1,1 @@
+export { CalendateCardComponent } from './calendate-card.component';

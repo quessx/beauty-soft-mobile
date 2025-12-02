@@ -1,0 +1,165 @@
+$typography: (
+    none: (
+        font-family: null,
+        font-size: 0,
+        line-height: 0,
+    ),
+    inherit: (
+        font-family: inherit,
+        font-size: inherit,
+        line-height: inherit,
+        font-weight: inherit,
+        font-style: inherit,
+        letter-spacing: inherit,
+        text-transform: inherit,
+    ),
+    caption-8-regular: (
+        font-family: "Inter",
+        font-size: 8px,
+        font-style: normal,
+        line-height: 14px,
+        font-weight: 400,
+        letter-spacing: 0px
+    ),
+
+    h6-semibold: (
+        font-family: "Inter",
+        font-size: 24px,
+        font-style: normal,
+        line-height: 32px,
+        font-weight: 600,
+        letter-spacing: -0.3px
+    ),
+    body-l-semibold: (
+        font-family: "Inter",
+        font-size: 20px,
+        font-style: normal,
+        line-height: 32px,
+        font-weight: 600,
+        letter-spacing: -0.3px
+    ),
+    body-l-medium: (
+        font-family: "Inter",
+        font-size: 20px,
+        font-style: normal,
+        line-height: 28px,
+        font-weight: 500,
+        letter-spacing: -0.2px
+    ),
+    body-s-medium: (
+        font-family: "Inter",
+        font-size: 16px,
+        font-style: normal,
+        line-height: 24px,
+        font-weight: 500,
+        letter-spacing: -0.2px
+    ),
+    body-s: (
+        font-family: "Inter",
+        font-size: 16px,
+        font-style: normal,
+        line-height: 24px,
+        font-weight: 400,
+        letter-spacing: -0.2px
+    ),
+    caption-l-medium: (
+        font-family: "Inter",
+        font-size: 14px,
+        font-style: normal,
+        line-height: 20px,
+        font-weight: 500,
+        letter-spacing: -0.1px
+    ),
+    caption-l: (
+        font-family: "Inter",
+        font-size: 14px,
+        font-style: normal,
+        line-height: 20px,
+        font-weight: 400,
+        letter-spacing: -0.1px
+    ),
+    caption-l-underline: (
+        font-family: "Inter",
+        font-size: 14px,
+        font-style: normal,
+        line-height: 20px,
+        font-weight: 400,
+        letter-spacing: -0.1px
+    ),
+    caption-m-medium: (
+        font-family: "Inter",
+        font-size: 12px,
+        font-style: normal,
+        line-height: 16px,
+        font-weight: 500,
+    ),
+    caption-m: (
+        font-family: "Inter",
+        font-size: 12px,
+        font-style: normal,
+        line-height: 16px,
+        font-weight: 400,
+    ),
+    caption-s: (
+        font-family: "Inter",
+        font-size: 10px,
+        font-style: normal,
+        line-height: 14px,
+        font-weight: 400,
+        letter-spacing: 0px
+    ),
+    caption-s-bold: (
+        font-family: "Inter",
+        font-size: 10px,
+        font-style: normal,
+        line-height: 14px,
+        font-weight: 700,
+        letter-spacing: 0px
+    ),
+);
+
+@function typography($level) {
+    @if not map-has-key($typography, $level) {
+        @error "Unknown typography $level '#{$level}'";
+    }
+
+    @return map-get($typography, $level);
+}
+
+@mixin font($level) {
+    font-family: font-family($level);
+    font-size: font-size($level);
+    line-height: line-height($level);
+    font-weight: font-weight($level);
+    font-style: font-style($level);
+    letter-spacing: letter-spacing($level);
+    text-transform: text-transform($level);
+}
+
+@function font-family($level: null) {
+    @return if($level == null, "Inter", map-get(typography($level), font-family));
+}
+
+@function font-size($level) {
+    @return map-get(typography($level), font-size);
+}
+
+@function line-height($level) {
+    @return map-get(typography($level), line-height);
+}
+
+@function font-weight($level) {
+    @return map-get(typography($level), font-weight);
+}
+
+@function font-style($level) {
+    @return map-get(typography($level), font-style);
+}
+
+@function letter-spacing($level) {
+    @return map-get(typography($level), letter-spacing);
+}
+
+@function text-transform($level) {
+    @return map-get(typography($level), text-transform);
+}

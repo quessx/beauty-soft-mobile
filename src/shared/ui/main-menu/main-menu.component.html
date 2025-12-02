@@ -1,0 +1,5 @@
+<p-panelMenu [model]="items()" [multiple]="true">
+    <ng-template #item let-item>
+        <bsm-menu-item [item]="item" (click)="handleClickMenuItem(item)"></bsm-menu-item>
+    </ng-template>
+</p-panelMenu>

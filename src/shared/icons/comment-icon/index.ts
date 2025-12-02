@@ -1,0 +1,1 @@
+export { CommentIconComponent } from './comment-icon.component';

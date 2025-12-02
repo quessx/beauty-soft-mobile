@@ -1,0 +1,1 @@
+export { BackIconComponent } from './back-icon.component';

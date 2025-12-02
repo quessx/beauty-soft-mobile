@@ -1,0 +1,9 @@
+:host {
+    display: flex;
+    width: 366px;
+    padding: var(--measurements-gap-0, 0) 0 0 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--measurements-gap-32, 32px);
+    align-items: stretch;
+}

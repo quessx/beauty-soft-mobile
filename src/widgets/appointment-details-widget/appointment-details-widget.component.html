@@ -1,0 +1,82 @@
+@defer (when isLoading()) {
+    <bsm-template-body-of-modal #contentElement [formGroup]="appointmentDataService.getForm()"
+                                [class.disabled-form]="this.isPaidSignal()">
+        <bsm-template-white-background>
+            <bsm-template-left-column-card>
+                <bsm-template-line [type]="'column-2'" [stroke]="'yes'">
+                    <beauty-input-date
+                        [attr.disabled]="true"
+                        formControlName="date"
+                        class="date_time">
+                    </beauty-input-date>
+                    <bsm-time-range-input
+                        class="date_time"
+                        [formGroup]="appointmentDataService.getForm()"
+                        [startTimeControlName]="'fromTime'"
+                        [endTimeControlName]="'toTime'">
+                    </bsm-time-range-input>
+                </bsm-template-line>
+                <bsm-template-line [stroke]="'yes'" [type]="'column-2'">
+                    <bsm-left-column-for-line [cssClasses]="'text'">
+                        <bsm-text [color]="'primary'" [type]="'body-s'"
+                                  class="title">{{ "appointment_details_widget.details_info.titles.specialist" | translate }}
+                        </bsm-text>
+                    </bsm-left-column-for-line>
+                    <bsm-specialist
+                        [attr.disabled]="state() === 'services' ? true : undefined"
+                        [options]="employeesStore.getPositionsTableItems()"
+                        [isShowIcon]="true"
+                        [texts]="getSpecialistTexts('specialist')"
+                        [state]="'master'"
+                        formControlName="employeeId">
+                    </bsm-specialist>
+                </bsm-template-line>
+                <bsm-template-line [stroke]="'yes'" [type]="'column-2'"
+                                   [formGroup]="appointmentDataService.getClientForm()">
+                    <bsm-left-column-for-line [cssClasses]="'text'">
+                        <bsm-text [color]="'primary'" [type]="'body-s'"
+                                  class="title">{{ "appointment_details_widget.details_info.titles.client" | translate }}
+                        </bsm-text>
+                    </bsm-left-column-for-line>
+                    <bsm-specialist
+                        [attr.disabled]="this.isPaidSignal() ? true : undefined"
+                        [options]="buttonListPopupModelSignal()"
+                        (searchValue)="searchClientSignal.set($event)"
+                        [texts]="getSpecialistTexts('client')"
+                        [state]="'client'"
+                        formControlName="name"
+                    ></bsm-specialist>
+                </bsm-template-line>
+                <bsm-template-line [stroke]="'no'" [type]="'column-2'">
+                    <bsm-left-column-for-line [cssClasses]="'text'">
+                        <bsm-text [color]="'primary'" [type]="'body-s'">{{ "appointment_details_widget.details_info.titles.state" | translate }}
+                        </bsm-text>
+                    </bsm-left-column-for-line>
+                    <bsm-right-column-line [cssClasses]="'status'">
+                        <bsm-visit-state-block formControlName="state"></bsm-visit-state-block>
+                    </bsm-right-column-line>
+                </bsm-template-line>
+            </bsm-template-left-column-card>
+        </bsm-template-white-background>
+
+        <bsm-template-white-background>
+            <bsm-add-order-feature></bsm-add-order-feature>
+        </bsm-template-white-background>
+
+        @if (!isPaidSignal()) {
+            <bsm-template-white-background class="template-background-comment">
+                <bsm-template-left-column-card>
+                    <bsm-template-line [stroke]="'no'" [type]="'n_p-0'">
+                        <bsm-left-column-for-line class="comment-line-column" [cssClasses]="'input'">
+                        <textarea class="comment" formControlName="comment"
+                                  [cdkTextareaAutosize]="true"
+                                  [cdkAutosizeMinRows]="1"
+                                  [cdkAutosizeMaxRows]="3"
+                                  [placeholder]='"appointment_details_widget.details_info.comment_placeholder" | translate'></textarea>
+                        </bsm-left-column-for-line>
+                    </bsm-template-line>
+                </bsm-template-left-column-card>
+            </bsm-template-white-background>
+        }
+    </bsm-template-body-of-modal>
+}

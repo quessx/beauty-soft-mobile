@@ -1,0 +1,1 @@
+export { TableDataSourceBase, TableItem } from './table-datasource.model';

@@ -1,0 +1,56 @@
+@use 'typography' as t;
+@use 'actions-wrapper-parent';
+
+
+bsm-actions-wrapper {
+    height: 506px;
+}
+
+div[container] {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    height: 100%;
+}
+
+div[header] {
+    display: flex;
+    padding: var(--measurements-gap-12, 12px) var(--measurements-gap-16, 16px);
+    align-items: center;
+    gap: var(--measurements-gap-16, 16px);
+    align-self: stretch;
+    background: var(--background-surface-default, #FFF);
+    border-radius: 16px 16px 0 0;
+
+    span[clear] {
+        flex-grow: 1;
+        overflow: hidden;
+        color: var(--text-base-tertiary, rgba(13, 17, 38, 0.40));
+        text-align: right;
+        text-overflow: ellipsis;
+
+        /* Caption L/Regular */
+        font-family: var(--typography-family-inter, Inter);
+        font-size: var(--typography-size-caption-l, 14px);
+        font-style: normal;
+        font-weight: 400;
+        line-height: var(--typography-line-height-caption-l, 20px);
+        /* 142.857% */
+        letter-spacing: var(--typography-letter-spacing-caption-l, -0.1px);
+    }
+}
+
+div[entities-cont] {
+    height: 100%;
+    overflow-y: auto;
+}
+
+div[entities] {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+    background: var(--background-surface-default, #FFF);
+    border-radius: 0 0 16px 16px;
+    padding-bottom: 12px;
+    min-height: 100%;
+}

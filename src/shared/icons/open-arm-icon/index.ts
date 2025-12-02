@@ -1,0 +1,1 @@
+export { OpenArmIconComponent } from './open-arm-icon.component';

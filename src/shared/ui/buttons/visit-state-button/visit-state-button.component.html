@@ -1,0 +1,18 @@
+@switch (state) {
+    @case('waiting') {
+        <svg beauty-clock-icon></svg>
+    }
+    @case('arrived') {
+        <svg beauty-plus-icon></svg>
+
+    }
+    @case('not_arrived') {
+        <svg beauty-minus-icon></svg>
+
+    }
+    @case('confirmed') {
+        <svg beauty-check-icon></svg>
+    }
+}
+<bsm-text [color]="'primary'" [type]="'body-s'">{{text()}}</bsm-text>
+

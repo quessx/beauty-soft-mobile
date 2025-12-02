@@ -1,0 +1,95 @@
+@use "sass:map";
+$stateColorSvg: (
+    color_svg: (
+        waiting: #F89500,
+        arrived: #00AC2B,
+        not_arrived: #E84343,
+        confirmed: var(--applied-loyalty-points),
+        cancelled: #E84343,
+    ),
+);
+@function get-color($state) {
+    $colorSvg: map.get($stateColorSvg, color_svg);
+    @if (not $colorSvg) {
+        @error "No color SVG defined for state: #{$state}";
+    }
+    @return map.get($colorSvg, $state);
+}
+
+@mixin changeColorSvg($color) {
+    ::ng-deep svg path {
+        fill: $color;
+    }
+}
+
+@mixin activeState($state) {
+    @include changeColorSvg(get-color($state));
+}
+
+:host {
+    display: flex;
+    padding: var(--measurements-gap-0, 0);
+    align-items: center;
+    gap: var(--measurements-gap-8, 8px);
+    cursor: pointer;
+
+    color: var(--icon-base-primary, #14151A);
+    /* Body S/Regular */
+    font-family: var(--typography-family-inter, Inter);
+    font-size: var(--typography-size-body-s, 16px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: var(--typography-line-height-body-s, 24px); /* 150% */
+    letter-spacing: var(--typography-letter-spacing-body-s, -0.2px);
+}
+
+/* Prevent mobile/desktop browsers from showing blue highlight or background on tap/focus */
+:host {
+    -webkit-tap-highlight-color: transparent !important;
+    -webkit-focus-ring-color: transparent !important;
+}
+
+/* Remove default focus/active visuals on host and all descendants */
+:host,
+:host * {
+    outline: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+}
+
+:host:focus,
+:host:active,
+:host:focus-visible,
+:host *:focus,
+:host *:active,
+:host *:focus-visible {
+    outline: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+}
+
+svg {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    aspect-ratio: 1/1;
+}
+
+:host-context(.visit-state-waiting.active) {
+    @include activeState('waiting');
+}
+
+:host-context(.visit-state-arrived.active) {
+    @include activeState('arrived');
+}
+
+:host-context(.visit-state-not_arrived.active) {
+    @include activeState('not_arrived');
+}
+
+:host-context(.visit-state-confirmed.active)  {
+    @include activeState('confirmed');
+}
+:host-context(.visit-state-cancelled.active) {
+    @include activeState('cancelled');
+}

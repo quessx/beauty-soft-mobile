@@ -1,0 +1,98 @@
+:host {
+    &.master {
+        display: flex;
+        width: 256px;
+        height: 32px;
+        max-width: 758px;
+        max-height: 32px;
+        padding: var(--measurements-gap-0, 0);
+        justify-content: flex-end;
+        align-items: center;
+        flex-shrink: 0;
+    }
+
+    &.client {
+        display: flex;
+        width: 256px;
+        height: 32px;
+        max-width: 758px;
+        max-height: 32px;
+        padding: var(--measurements-gap-0, 0);
+        justify-content: flex-end;
+        align-items: center;
+        gap: var(--measurements-gap-4, 4px);
+        flex-shrink: 0;
+    }
+
+    &.text {
+        display: flex;
+        width: 256px;
+        height: 32px;
+        max-width: 758px;
+        max-height: 32px;
+        padding: var(--measurements-gap-0, 0);
+        justify-content: flex-end;
+        align-items: center;
+        flex-shrink: 0;
+    }
+
+    &.status {
+        display: flex;
+        height: 32px;
+        max-width: 758px;
+        max-height: 32px;
+        padding: var(--measurements-gap-0, 0);
+        justify-content: flex-end;
+        align-items: center;
+        flex-shrink: 0;
+    }
+
+    &.price {
+        display: flex;
+        height: 32px;
+        max-width: 256px;
+        max-height: 32px;
+        padding: var(--measurements-gap-0, 0);
+        justify-content: flex-end;
+        align-items: center;
+        gap: var(--measurements-gap-8, 8px);
+        flex-shrink: 0;
+    }
+
+    &.time {
+        display: flex;
+        width: 175px;
+        height: 32px;
+        max-height: 32px;
+        padding: var(--measurements-gap-0, 0);
+        justify-content: flex-end;
+        align-items: center;
+        gap: var(--measurements-gap-1, 1px);
+        flex-shrink: 0;
+    }
+
+    &.text-2-container {
+        display: inline-flex;
+        height: 32px;
+        max-width: 281px;
+        min-height: 32px;
+        padding: var(--measurements-gap-0, 0);
+        justify-content: flex-end;
+        align-items: flex-start;
+        gap: var(--measurements-gap-8, 8px);
+        flex-shrink: 0;
+    }
+
+    &.client-overtext {
+        display: flex;
+        width: 256px;
+        height: 32px;
+        max-width: 758px;
+        max-height: 32px;
+        padding: var(--measurements-gap-0, 0);
+        justify-content: flex-end;
+        align-items: center;
+        gap: var(--measurements-gap-4, 4px);
+        flex-shrink: 0;
+    }
+}

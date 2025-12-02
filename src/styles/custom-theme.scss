@@ -1,0 +1,361 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+@use './defaults';
+@use './colors';
+@import url("./variables.scss");
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap');
+
+html {
+    --right-column-width-with-table: calc(100vw - 279px - 39px);
+
+    --tui-font-text-s: var(--typography-family-inter, Inter) !important;
+
+    body {
+        font-family: var(--typography-family-inter, Inter);
+        --tui-font-text-l: var(--typography-family-inter, Inter);
+    }
+    @include mat.theme((
+        color: (
+            theme-type: light,
+            primary: mat.$azure-palette,
+            tertiary: mat.$blue-palette,
+        ),
+        typography: var(--typography-family-inter, Inter),
+        density: 0,
+    ));
+    @include mat.paginator-overrides((
+        container-text-color: var(--text-base-primary, #14151A),
+        container-background-color : transparent,
+        container-text-font: var(--typography-family-inter, Inter),
+        container-text-size: var(--typography-size-caption-l, 14px),
+        container-text-weight: 500,
+        container-text-line-height: var(--typography-line-height-caption-l, 20px),
+        container-text-tracking: var(--typography-letter-spacing-caption-l, -0.1px),
+        touch-target-display: none,
+    ));
+    @include mat.checkbox-overrides((
+        touch-target-display: none,
+        selected-focus-state-layer-color: transparent,
+        unselected-focus-state-layer-color: transparent,
+        selected-hover-state-layer-color: transparent,
+        unselected-hover-state-layer-color: transparent,
+        selected-pressed-state-layer-color: transparent,
+        unselected-pressed-state-layer-color: transparent,
+        selected-icon-color: var(--color-main),
+        selected-focus-icon-color: var(--color-main),
+        selected-hover-icon-color: var(--color-main),
+        selected-checkmark-color: var(--color-main),
+        unselected-focus-icon-color: #E9EAEC,
+        unselected-icon-color: #E9EAEC,
+        unselected-hover-icon-color: #E9EAEC,
+        state-layer-size: 15px,
+    ));
+    @include mat.table-overrides((
+        background-color: transparent,
+        row-item-outline-color: var(--border-base-divider, #E9EAEC),
+        header-container-height: 40px,
+        row-item-container-height: 54px,
+        header-headline-color: var(--text-base-secondary, rgba(15, 19, 36, 0.60)),
+        header-headline-weight: 400,
+        header-headline-tracking: var(--typography-letter-spacing-caption-l, -0.1px),
+    ));
+    @include mat.list-overrides((
+        list-item-focus-state-layer-color: transparent,
+        list-item-label-text-color: #14151A,
+        list-item-label-text-font: var(--typography-family-inter, Inter),
+        list-item-label-text-size: var(--typography-size-caption-l, 14px),
+        list-item-label-text-weight: 500,
+        list-item-label-text-line-height: var(--typography-line-height-caption-l, 20px), /* 142.857% */
+        list-item-label-text-tracking: var(--typography-letter-spacing-caption-l, -0.1px),
+    ));
+
+    mat-radio-button.beauty-mat-radio-button {
+        & label {
+            font-family: var(--typography-family-inter, Inter);
+            font-size: var(--typography-size-caption-l, 14px);
+            font-weight: 400;
+            line-height: var(--typography-line-height-caption-l, 20px);
+            letter-spacing: var(--typography-letter-spacing-caption-l, -0.1px);
+
+            padding-left: 6px;
+        }
+
+        display: flex;
+        height: min-content;
+
+        .mdc-radio {
+            padding: initial;
+            scale: 100%;
+        }
+        .mdc-form-field {
+            width: 100%;
+        }
+        .mdc-label {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+        .mat-mdc-radio-touch-target {
+            width: fit-content;
+            height: fit-content;
+        }
+        input {
+            width: 20px !important;
+            height: 20px !important;
+        }
+        .mdc-radio__background {
+            scale: 85%;
+        }
+        .mdc-radio__background::before{
+            all: initial;
+        }
+        .mdc-radio__inner-circle {
+            border-color: var(--color-main) !important;
+        }
+        .mdc-radio__outer-circle {
+            border-color: var(--color-main) !important;
+        }
+        &:not(.mat-mdc-radio-checked) {
+            .mdc-radio__outer-circle {
+                scale: 90%;
+                border-width: 1px;
+            }
+        }
+    }
+
+    @include mat.divider-overrides((
+        color: #E9EAEC,
+    ));
+
+    mat-checkbox {
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        display: flex !important;
+
+        .mdc-form-field {
+            width: 100%;
+            height: 100%;
+            align-items: center;
+
+            .mdc-label {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+            }
+        }
+    }
+
+    .mdc-checkbox {
+        box-sizing: border-box;
+        height: fit-content;
+        max-width: fit-content;
+
+        input {
+            position: static;
+            width: 16px !important;
+            height: 16px !important;
+        }
+
+        .mat-ripple, .mdc-checkbox__ripple {
+            display: none;
+            position: absolute;
+        }
+    }
+    .mat-mdc-checkbox-checked {
+        .mdc-checkbox__background {
+            background-image: url("/checkbox-icon.svg");
+            background-position: center center;
+            padding: 0;
+            background-repeat: no-repeat;
+            height: 16px !important;
+            width: 16px !important;
+            * {
+                display: none;
+            }
+        }
+    }
+
+    .mdc-checkbox__background {
+        height: 16px !important;
+        width: 16px !important;
+        position: static;
+        background: #FFFFFF;
+        border: 1px solid #dee0e3;
+        border-radius: var(--measurements-radius-xs, 4px);
+        box-shadow: 0px 1px 2px rgb(20 21 26 / .05);
+    }
+
+    th.mdc-data-table__header-cell {
+        mat-checkbox:not(.mat-mdc-checkbox-checked) .mdc-checkbox__background {
+            background-color: transparent !important;
+            border-color: rgb(222, 224, 227) !important;
+            .mdc-checkbox__mixedmark {
+                display: none !important;
+            }
+        }
+    }
+
+    .mat-mdc-header-row {
+        background: var(--background-surface-neutral, #F7F7F8);
+    }
+    .mdc-data-table__cell, .mdc-data-table__header-cell {
+        padding: 0px var(--numbers-6, 6px);
+    }
+
+    .table-link {
+        color: var(--table-link-text);
+        align-self: stretch;
+        font-family: var(--typography-family-inter, Inter);
+        font-size: var(--typography-size-caption-l, 14px);
+        font-style: normal;
+        font-weight: 500;
+        line-height: var(--typography-line-height-caption-l, 20px); /* 142.857% */
+        letter-spacing: var(--typography-letter-spacing-caption-l, -0.1px);
+        cursor: pointer;
+    }
+    .table-link:hover {
+        color: var(--text-hover);
+    }
+    .table-price {
+        display: flex;
+        flex-direction: row;
+        white-space: nowrap;
+    }
+    .mat-mdc-row:hover {
+        background: var(--mdc-row-bg-hover);
+    }
+    .mat-mdc-paginator-container {
+        justify-content: flex-start;
+        .mat-mdc-paginator-range-label, .mdc-notched-outline {
+            display: none;
+        }
+    }
+
+    .mdc-list-item__primary-text {
+        display: flex !important;
+        align-items: center !important;
+        gap: 8px !important;
+    }
+
+    .mat-divider, .mat-divider-horizontal {
+        margin: 20px 0;
+    }
+
+    .mat-mdc-list-item,
+    .mat-mdc-list-item-single-line,
+    .mdc-list-item--with-one-line {
+        background-color: #fff;
+    }
+
+    .mdc-list-item {
+        max-height: 36px !important;
+        padding: var(--numbers-2, 2px) var(--numbers-8, 8px);
+    }
+
+    .mat-mdc-list-item-unscoped-content {
+        padding: var(--numbers-6, 6px) var(--numbers-8, 8px);
+    }
+
+    .mdc-list-item__content {
+        display: flex;
+        align-items: center;
+        border-radius: var(--measurements-radius-lg, 10px);
+    }
+
+    mat-list-item.active-link .mdc-list-item__content, mat-list-item.active-link-add .mdc-list-item__content {
+        background: var(--background-overlay-active-normal, rgba(10, 15, 41, 0.04));
+    }
+
+    .mdc-list-item__content:hover {
+        cursor: pointer;
+    }
+
+    .mat-mdc-paginator-page-size {
+        align-items: center;
+        gap: 2px;
+    }
+
+    .mat-mdc-field-flex {
+        align-items: center;
+    }
+
+    .mat-mdc-paginator {
+        --mat-paginator-select-trigger-text-size: 14px;
+        --mat-select-trigger-text-weight: 500;
+    }
+
+    .mat-mdc-select-panel {
+        --mat-select-container-elevation-shadow: 0px 10px 16px -3px rgba(20, 21, 26, 0.08),
+        0px 3px 6px -2px rgba(20, 21, 26, 0.05);
+        border-radius: var(--measurements-radius-xl, 12px) !important;
+        border: 1px solid var(--border-action-normal, #DEE0E3) !important;
+        padding: var(--numbers-4, 4px) var(--numbers-6, 6px) !important;
+        background: var(--background-modal-default, #FFF) !important;
+        margin: 6px 0;
+        gap: 4px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .mat-mdc-option.mdc-list-item {
+        font-size: var(--typography-size-caption-l, 14px);
+        font-style: normal;
+        align-items: center;
+        padding: var(--numbers-6, 6px) var(--numbers-6, 6px) var(--numbers-6, 6px) var(--numbers-10, 10px);
+        border-radius: var(--measurements-radius-sm, 6px);
+        min-height: fit-content;
+        box-sizing: border-box;
+    }
+
+    .mat-mdc-option.mdc-list-item:hover {
+        background: var(--background-overlay-active-normal, rgba(10, 15, 41, 0.04))!important;
+    }
+
+    .mat-mdc-option:focus.mdc-list-item,
+    .mat-mdc-option.mat-mdc-option-active.mdc-list-item {
+        background: var(--background-overlay-active-normal, rgba(10, 15, 41, 0.04))!important;
+    }
+
+    .mat-mdc-option.mat-mdc-option-active.mdc-list-item span {
+        display: flex;
+        width: 100%;
+        height: fit-content;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .mat-mdc-option.mat-mdc-option-active.mdc-list-item span::after {
+        content: '';
+        width: 20px;
+        height: 20px;
+        display: block;
+        background-image: url("/check-grey-icon.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .mat-mdc-select-arrow {
+        transition: transform 0.3s ease;
+    }
+
+    .mat-focused .mat-mdc-select-arrow,
+    .mat-mdc-select[aria-expanded="true"] .mat-mdc-select-arrow {
+        transform: rotate(180deg);
+    }
+
+    .mat-mdc-select:not([aria-expanded="true"]) .mat-mdc-select-arrow {
+        transform: rotate(0deg);
+    }
+
+    .mat-mdc-form-field-flex {
+        height: 100%;
+        align-items: center;
+    }
+}

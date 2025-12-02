@@ -1,0 +1,21 @@
+@if (formGroup()) {
+    <bsm-item-group [signature]="helperText()">
+        <form [formGroup]="formGroup()">
+            <bsm-row [type]="'default'" [stroke]="'yes'" [leftText]="'Prefix'">
+                <beauty-input-search-type
+                    right-content
+                    [formControlName]="firstNameControlName()"
+                    [placeholder]="firstNamePlaceholder() || ''"
+                    (closePopup)="onClearSearch(firstNameControlName())"
+                ></beauty-input-search-type>
+            </bsm-row>
+            <bsm-row [type]="'input'" [stroke]="'no'">
+                <beauty-input-search-type
+                    [formControlName]="lastNameControlName()"
+                    [placeholder]="lastNamePlaceholder() || ''"
+                    (closePopup)="onClearSearch(lastNameControlName())"
+                ></beauty-input-search-type>
+            </bsm-row>
+        </form>
+    </bsm-item-group>
+}

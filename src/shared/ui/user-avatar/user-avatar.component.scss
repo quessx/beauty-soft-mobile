@@ -1,0 +1,44 @@
+:host {
+    display: flex;
+    width: min-content;
+    position: relative;
+    --p-avatar-width: 32px;
+    --p-avatar-height: 32px;
+    --p-avatar-lg-height: 128px;
+    --p-avatar-lg-width: 128px;
+    --p-avatar-xl-height: 180px;
+    --p-avatar-xl-width: 180px;
+}
+
+:host > div {
+    position: absolute;
+}
+
+:host[action="full"] > div {
+    inset: 0;
+}
+
+:host[action="icon"] > div {
+    inset: auto 0 0 auto;
+    width: 42px;
+    height: 42px;
+}
+
+div.pencil-cont {
+    display: flex;
+    width: 42px;
+    height: 42px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    aspect-ratio: 1/1;
+    border-radius: var(--measurements-radius-full, 999px);
+    background: #F7F7F7;
+
+    position: absolute;
+    inset: auto 0 0 auto;
+}
+
+input {
+    display: none;
+}

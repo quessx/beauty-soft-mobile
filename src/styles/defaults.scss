@@ -1,0 +1,135 @@
+@charset "UTF-8";
+
+html {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-weight: normal;
+    font-style: normal;
+}
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    height: 100svh;
+    width: 100vw;
+    overflow: hidden;
+    overscroll-behavior: contain;
+}
+
+ion-app, ion-content { height: 100%; }
+
+ion-content::part(scroll) {
+    overflow-y: hidden !important;
+}
+
+body {
+    background: var(--background-surface-neutral, #F7F7F8);
+
+    & > * {
+        padding-bottom: var(--safe-area-inset-bottom, 0px);
+        padding-top: var(--safe-area-inset-top, 0px);
+        overflow: hidden !important;
+        box-sizing: border-box !important;
+        background-clip: padding-box;
+
+        &:has(bsm-auth-page, bsm-auth-registration-page) {
+            padding-bottom: 0;
+            padding-top: 0;
+        }
+    }
+
+    beauty-sidebar-popup-ae {
+        padding-top: 0 !important;
+        & > div img[logo] {
+            margin-top: calc(11px + var(--safe-area-inset-top, 0px));
+            box-sizing: content-box;
+            width: min-content;
+        }
+    }
+}
+
+body ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+}
+
+body ::-webkit-scrollbar-thumb {
+    background-color: rgba(233, 234, 236, 1);
+    border-radius: 999px;
+}
+
+body ::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+
+html,
+body,
+input,
+textarea,
+select,
+button {
+    font-family: "Inter Sans", sans-serif;
+    font-size: 1em;
+    line-height: 1.2em;
+}
+
+input,
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+    padding: 0;
+    --webkit-box-shadow: 0 0 0 1000px white inset !important;
+    user-select: none;
+}
+
+svg {
+    fill: currentcolor;
+    color-interpolation-filters: sRGB;
+}
+
+a {
+    color: inherit;
+    /* Prevent text selection and mobile long-press callout on links while keeping them clickable */
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none; /* iOS Safari long-press */
+    -webkit-user-drag: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+figure,
+h1,
+p {
+    margin: 0;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+.error-text {
+    color: var(--error-text);
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+beauty-sidebar-popup-ae {
+    display: none !important;
+}

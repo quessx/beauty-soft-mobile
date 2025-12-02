@@ -1,0 +1,1 @@
+export { ClockIconComponent } from './clock-icon.component';

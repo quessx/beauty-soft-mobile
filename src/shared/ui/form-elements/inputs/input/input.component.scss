@@ -1,0 +1,47 @@
+@use 'typography' as t;
+
+:host {
+    position: relative;
+}
+
+.ui-input {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #bdbdbd;
+    font-size: 16px;
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    clear: both;
+    box-sizing: border-box;
+
+    input {
+        width: 100%;
+    }
+    .loupe-icon {
+        position: relative;
+        bottom: 1px
+    }
+    .rub-icon {
+        position: relative;
+        bottom: 1px;
+    }
+    .percent-icon {
+        position: absolute;
+        opacity: 0.4;
+    }
+
+    .percent-input {
+        text-align: center;
+        color: #E6483D;
+        @include t.font('caption-m-medium');
+        border-radius: var(--measurements-radius-lg, 10px);
+        width: 100%;
+        // max-width: 31px;
+        padding: 0;
+        min-height: 30px;
+    }
+}

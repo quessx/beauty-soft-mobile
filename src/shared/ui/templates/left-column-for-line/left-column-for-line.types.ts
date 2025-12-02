@@ -1,0 +1,10 @@
+export type TPropertyClassesLeftColumnForLine =
+    'text'
+    | 'text-2-containers'
+    | 'services-and-goods'
+    | 'services-over-text'
+    | 'date'
+    | 'add'
+    | 'promotion-card'
+    | 'pay-card'
+    | 'input'

@@ -1,0 +1,1 @@
+export { AppointmentPaymentPageComponent } from './appointment-payment-page.component';

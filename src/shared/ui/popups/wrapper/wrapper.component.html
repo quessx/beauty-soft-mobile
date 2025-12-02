@@ -1,0 +1,15 @@
+<div header #anchor>
+    <bsm-header-button [text]="actionVariants()[0] !== 'none' ? ('wrapper.left.' + actionVariants()[0] | translate) : ''"
+        [withIcon]="actionVariants()[0] === 'back'" (click)="onLeftAction()" />
+    <bsm-text [color]="'primary'" [type]="'body-s-medium'">{{ centerText() | translate }}</bsm-text>
+    <bsm-header-button [text]="actionVariants()[1] !== 'none' ? ('wrapper.right.' + actionVariants()[1] | translate) : ''"
+        (click)="onRightAction()" />
+</div>
+
+<ng-content></ng-content>
+
+@if ( !isLoaded() ) {
+    <bsm-skeleton/>
+}
+
+<svg beauty-arrow-down-icon />

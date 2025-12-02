@@ -1,0 +1,11 @@
+:host {
+    display: flex;
+    padding: var(--measurements-gap-0, 0);
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: var(--measurements-gap-0, 0);
+
+    //добавил потмоу что колонки получились слишком прижатыми, скорее всего применяется какой-то параметр в фигме по умолчанию
+    width: 100%;
+}

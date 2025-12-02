@@ -1,0 +1,1 @@
+export { BankCardIconComponent } from './bank-card-icon.component';

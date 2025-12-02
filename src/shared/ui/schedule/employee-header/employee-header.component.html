@@ -1,0 +1,26 @@
+@if (!isLoading()) {
+    <img beauty-user-image src="{{employeeModel?.getImg() || 'avatar.svg'}}">
+    <div class="text-container">
+        <div class="name">
+            <span class="name">{{ employeeModel?.getFirstName() }}</span>
+        </div>
+        @let spec = employeeModel?.getSpeciality();
+        @if (spec) {
+            <div class="speciality">
+                <span class="speciality">{{ spec }}</span>
+            </div>
+        }
+    </div>
+} @else {
+    <ion-thumbnail slot="start">
+        <ion-skeleton-text [animated]="true"></ion-skeleton-text>
+    </ion-thumbnail>
+    <div ion-text>
+            <span class="skeleton-name">
+                <ion-skeleton-text [animated]="true" style="width: 70%;"></ion-skeleton-text>
+            </span>
+        <span>
+                <ion-skeleton-text [animated]="true" style="width: 60%;"></ion-skeleton-text>
+            </span>
+    </div>
+}

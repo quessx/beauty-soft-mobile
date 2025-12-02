@@ -1,0 +1,4 @@
+<input type="text" [mask]="usedMask" [placeholder]="placeholder" beauty-input class="search-input" [formControl]="control" (focus)="onFocus()">
+@if ((control.value || '').length > 0) {
+    <svg bsm-vector-edit-icon class="clear-icon" (click)="clear()"></svg>
+}

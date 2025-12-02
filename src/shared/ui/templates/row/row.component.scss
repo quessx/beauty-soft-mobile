@@ -1,0 +1,26 @@
+:host {
+    align-self: stretch;
+    
+    &.default {
+        display: flex;
+    }
+    &.input {
+        display: flex;
+        height: 56px;
+        padding: var(--measurements-gap-12, 12px) var(--measurements-gap-16, 16px) var(--measurements-gap-11, 11px) var(--measurements-gap-16, 16px);
+        align-items: center;
+        gap: var(--measurements-gap-16, 16px);
+    }
+    &.text {
+        display: flex;
+        padding: 0 16px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        align-self: stretch;
+    }
+
+    &.yes {
+        border-bottom: 1px solid rgba(247, 247, 248, 1);
+    }
+}

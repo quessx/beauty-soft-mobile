@@ -1,0 +1,16 @@
+<bsm-actions-wrapper (cancel)="onCancel()" (confirm)="onConfirm()" [centerText]="centerText" [isConfirmDisabled]="isEmptySelection">
+    <div container>
+        <div header>
+            <bsm-text [color]="'primary'" [type]="'body-s'">{{entitiesTitle}}</bsm-text>
+            <span clear (click)="onSelection()">{{ 'checkbox_popup.' + (isEmptySelection ? 'select_all' : 'clear_selection') | translate }}</span>
+        </div>
+        <div entities-cont>
+            <div entities>
+                @for(entity of entities(); track entity.id) {
+                    <ui-checkbox [checked]="!!entity.metadata?.checked" [label]="entity.label" (checkedChange)="onCheckedChange(entity.id, $event)"></ui-checkbox>
+                }
+            </div>
+        </div>
+
+    </div>
+</bsm-actions-wrapper>

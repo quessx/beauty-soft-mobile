@@ -1,0 +1,1 @@
+export { PencilIconComponent } from './pencil-icon.component';

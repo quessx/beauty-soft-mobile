@@ -1,0 +1,33 @@
+<div>
+    @switch (state()) {
+        @case ("confirmed") {
+            <svg beauty-check-icon></svg>
+        }
+        @case ("arrived") {
+            <svg beauty-plus-icon></svg>
+        }
+        @case ("not_arrived") {
+            <svg beauty-minus-icon></svg>
+        }
+        @case ("waiting") {
+            <svg beauty-clock-icon></svg>
+        }
+    }
+</div>
+<div>
+    @if(note()) {
+        <svg beauty-comment-icon></svg>
+    }
+    
+    @switch (createdByRole()) {
+        @case ("online") {
+            <svg beauty-status-online-icon></svg>
+        }
+        @case ("employee") {
+            <svg beauty-phone-icon></svg>
+        }
+        @case ("alika") {
+            <svg beauty-status-online-icon></svg>
+        }
+    }
+</div>

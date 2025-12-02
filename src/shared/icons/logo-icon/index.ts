@@ -1,0 +1,1 @@
+export { LogoIconComponent } from './logo-icon.component';

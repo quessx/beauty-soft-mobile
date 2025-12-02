@@ -1,0 +1,32 @@
+<div promotions>
+    <div>
+        @for ( promo of promotions(); track $index ) {
+            <bsm-promo-item [promo]="promo" [selected]="!!selectedPromo()?.includes(promo.id)" (click)="onPromoClick(promo.id)"></bsm-promo-item>
+        }
+    </div>
+    <div actions>
+        <span [class.selected]="!useLoyaltyPoints()"  (click)="onBonusClick(false)">{{`appointment_payment_widget.give` | translate : { cashback: cashback()} }}</span>
+        <span [class.selected]="useLoyaltyPoints()" (click)="onBonusClick(true)">{{`appointment_payment_widget.spend` | translate : { points: loyaltyPointsToUse()} }}</span>
+    </div>
+</div>
+<div pay>
+    <span>
+        {{'appointment_payment_widget.to_pay' | translate}}
+    </span>
+    <div>
+        @if( initialPrice() !== totalPrice() ) {
+            <span initial>{{initialPrice().toLocaleString()}}</span>
+        }
+        <span>{{totalPrice().toLocaleString()}}</span>
+    </div>
+</div>
+<div pay-type>
+    <div cash (click)="onClick('cash')">
+        <svg beauty-cash-icon></svg>
+        <span>{{'appointment_payment_widget.cash' | translate}}</span>
+    </div>
+    <div card (click)="onClick('card')">
+        <svg beauty-bank-card-icon></svg>
+        <span>{{'appointment_payment_widget.card' | translate}}</span>
+    </div>
+</div>

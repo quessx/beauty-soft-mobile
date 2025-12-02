@@ -1,0 +1,130 @@
+:host {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+}
+
+:host .w-100 {
+    width: 100%;
+    display: flex;
+}
+
+:host input {
+    padding-right: 28px;
+}
+
+:host .icon {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+}
+
+:host .options-container {
+    width: 100%;
+    display: flex;
+    padding: var(--numbers-4, 4px) var(--numbers-0, 0px);
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: var(--measurements-radius-xl, 12px);
+    border: 1px solid var(--border-action-normal, #DEE0E3);
+    background: var(--background-modal-default, #FFF);
+
+    box-shadow: 0px 10px 16px -3px rgba(20, 21, 26, 0.08), 0px 3px 6px -2px rgba(20, 21, 26, 0.05);
+
+    /* Shadows/lg */
+    max-height: 296px;
+    overflow-y: auto;
+}
+
+:host .option {
+    display: flex;
+    padding: var(--numbers-2, 2px) var(--numbers-6, 6px);
+    align-items: center;
+    gap: var(--numbers-4, 4px);
+    align-self: stretch;
+    border-radius: var(--measurements-radius-0, 0px);
+    cursor: pointer;
+}
+
+:host .option .wrap {
+    display: flex;
+    padding: var(--numbers-6, 6px);
+    align-items: center;
+    gap: var(--numbers-4, 4px);
+    flex: 1 0 0;
+    border-radius: var(--measurements-radius-sm, 6px);
+    background: var(--background-overlay-normal, rgba(255, 255, 255, 0.00));
+    color: var(--text-base-primary, #14151A);
+    justify-content: space-between;
+
+    /* Caption L/Regular */
+    font-family: var(--typography-family-inter, Inter);
+    font-size: var(--typography-size-caption-l, 14px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: var(--typography-line-height-caption-l, 20px); /* 142.857% */
+    letter-spacing: var(--typography-letter-spacing-caption-l, -0.1px);
+}
+
+:host .option .wrap:hover, :host .option .selected {
+    background: var(--background-overlay-active-normal, rgba(10, 15, 41, 0.04));
+}
+
+:host .popup-container {
+    overflow: visible;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+:host-context(.custom-scroll) .popup-container {
+    overflow: visible;
+    border-radius: 12px;
+}
+
+:host-context(.custom-scroll) .scrollbar-container {
+    position: relative;
+    display: flex;
+    padding: 0;
+    padding-right: 6px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--numbers-0, 0px);
+    border-radius: var(--measurements-radius-xl, 12px);
+    border: 1px solid var(--border-action-normal, #DEE0E3);
+    background: var(--background-modal-default, #FFF);
+    box-shadow: 0px 10px 16px -3px rgba(20, 21, 26, 0.08), 0px 3px 6px -2px rgba(20, 21, 26, 0.05);
+}
+
+:host-context(.custom-scroll) .option {
+    padding-right: 0;
+}
+
+:host-context(.custom-scroll) .options-container {
+    max-width: 100%;
+    overflow: auto;
+    padding: 4px 0;
+    border: initial;
+    box-shadow: initial;
+}
+
+:host-context(.custom-scroll) .options-container::-webkit-scrollbar {
+    width: 4px;
+}
+
+:host-context(.custom-scroll) .options-container::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+    background-color: var(--background-surface-neutral-subtle, #E9EAEC);
+    cursor: grab;
+}
+
+:host-context(.custom-scroll) .options-container::-webkit-scrollbar-thumb:active {
+    cursor: grabbing;
+}
+
+:host-context(.custom-scroll) .options-container::-webkit-scrollbar-track {
+    margin: 6px;
+}

@@ -1,0 +1,21 @@
+<div class="popup-container" #cont>
+    <div class="scrollbar-container">
+        @for (option of model; let idx = $index; track idx;) {
+            <div class="option" (mousedown)="onMousedown($event, option)">
+                <span class="wrap" [ngClass]="{
+                    'selected': selectedId && selectedId()?.id == option.id
+                }">
+                    @if (typeof option?.metadata?.preItem === 'string') {
+                        <span [style]="option.metadata.preItem"></span>
+                    }
+                    <span class="text-truncate">
+                        {{option.label | translate}}
+                    </span>
+                    @if (selectedId && selectedId()?.id === option.id) {
+                        <svg beauty-check-mark-icon [style.marginLeft]="'auto'"></svg>
+                    }
+                </span>
+            </div>
+        }
+    </div>
+</div>

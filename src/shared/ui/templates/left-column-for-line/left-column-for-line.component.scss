@@ -1,0 +1,96 @@
+@mixin leftColumnStyles() {
+    display: inline-flex;
+    height: 32px;
+    min-height: 32px;
+    padding: var(--measurements-gap-0, 0);
+    flex-shrink: 0;
+}
+
+:host {
+    &.text {
+        display: inline-flex;
+        height: 32px;
+        max-width: 94px;
+        min-height: 32px;
+        padding: var(--measurements-gap-0, 0);
+        align-items: flex-start;
+        flex-shrink: 0;
+    }
+
+    &.text-2-containers {
+        display: inline-flex;
+        height: 32px;
+        max-width: 232px;
+        min-height: 32px;
+        padding: var(--measurements-gap-0, 0);
+        gap: var(--measurements-gap-8, 8px);
+        flex-shrink: 0;
+
+        //поставил center вместо flex-start из-за несоответствия стилей в фигме
+        align-items: center;
+
+    }
+
+    &.services-and-goods {
+        display: flex;
+        width: 232px;
+        max-width: 710px;
+        min-height: 32px;
+        max-height: 56px;
+        padding: var(--measurements-gap-0, 0);
+        align-items: center;
+    }
+
+    &.services-over-text {
+        display: flex;
+        width: 232px;
+        max-width: 710px;
+        min-height: 32px;
+        max-height: 56px;
+        padding: var(--measurements-gap-0, 0);
+        align-items: center;
+    }
+
+    &.date {
+        display: flex;
+        height: 32px;
+        min-width: 110px;
+        min-height: 32px;
+        padding: var(--measurements-gap-0, 0);
+        align-items: center;
+        flex-shrink: 0;
+    }
+
+    &.add {
+        display: flex;
+        width: 236px;
+        justify-content: center;
+        align-items: center;
+        gap: var(--measurements-gap-4, 4px);
+    }
+
+    &.promotion-card {
+        display: inline-flex;
+        padding: var(--measurements-gap-0, 0);
+        align-items: center;
+        gap: var(--measurements-gap-16, 16px);
+
+        :host-context(bsm-row) {
+            width: 100%;
+        }
+    }
+
+    &.pay-card {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--measurements-gap-16, 16px);
+    }
+
+    &.input {
+        display: flex;
+        width: 236px;
+        justify-content: center;
+        align-items: center;
+        gap: var(--measurements-gap-4, 4px);
+    }
+}

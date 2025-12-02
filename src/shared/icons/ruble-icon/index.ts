@@ -1,0 +1,1 @@
+export { RubleIconComponent } from './ruble-icon.component';

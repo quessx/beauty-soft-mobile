@@ -1,0 +1,1 @@
+export { CrmPageComponent } from './crm-page.component';

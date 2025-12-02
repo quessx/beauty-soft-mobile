@@ -1,0 +1,1 @@
+export const ID_NEW_OPTION: string = "new-option";

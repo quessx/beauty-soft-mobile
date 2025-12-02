@@ -1,0 +1,188 @@
+:host {
+
+}
+
+:host .popup-container {
+    width: max-content;
+    padding: initial;
+    position: absolute;
+    display: flex;
+    max-width: var(--numbers-480, 480px);
+    padding: var(--measurements-gap-16, 16px);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--numbers-12, 12px);
+    z-index: 1000;
+    border-radius: 10px;
+    background: var(--background-surface-default, #FFF);
+
+    /* Shadows/lg */
+    box-shadow: 0 10px 16px -3px rgba(20, 21, 26, 0.08), 0 3px 6px -2px rgba(20, 21, 26, 0.05);
+}
+
+:host ::ng-deep .t-calendar-title {
+    order: -1;
+    color: var(--text-base-primary, #14151A);
+
+    /* Caption L/Medium */
+    font-family: var(--typography-family-inter, Inter);
+    font-size: var(--typography-size-caption-l, 14px);
+    font-style: normal;
+    font-weight: 500;
+    line-height: var(--typography-line-height-caption-l, 20px); /* 142.857% */
+    letter-spacing: var(--typography-letter-spacing-caption-l, -0.1px);
+}
+
+:host ::ng-deep tui-calendar {
+    min-block-size: unset;
+    width: fit-content;
+    padding: var(--numbers12, 12px);
+}
+
+:host ::ng-deep tui-calendar tui-calendar-spin {
+    margin-bottom: var(--numbers12, 12px) !important;
+}
+
+:host ::ng-deep .t-content.t-calendar-title {
+    padding: initial;
+}
+
+:host ::ng-deep #year-btn {
+    color: #4875E7;
+    text-decoration: underline;
+}
+
+:host ::ng-deep tui-spin-button {
+    justify-content: normal;
+}
+
+:host ::ng-deep tui-spin-button button:last-child:not(#year-btn) {
+    margin-left: 20px;
+    scale: 125%;
+}
+
+:host ::ng-deep tui-spin-button button:first-child:not(#year-btn) {
+    margin-left: auto;
+    scale: 125%;
+}
+
+:host ::ng-deep .ng-star-inserted.t-cell[data-range=active] {
+    border-radius: var(--measurements-radius-md, 8px);
+    background-color: var(--color-main);
+    color: var(--text-base-primary, #14151A);
+}
+
+:host ::ng-deep .t-row.t-row_weekday .t-cell {
+    color: var(--text-base-secondary, rgba(15, 19, 36, 0.6));
+    font-family: var(--typography-family-inter, Inter);
+    font-size: var(--typography-size-caption-m, 12px);
+    font-weight: 400;
+    line-height: var(--typography-line-height-caption-m, 16px);
+}
+
+:host ::ng-deep .t-row.t-row_weekday {
+    height: 32px !important;
+    margin-bottom: 4px;
+}
+
+:host ::ng-deep .t-row.ng-star-inserted, :host ::ng-deep .t-row.t-row_weekday {
+    width: fit-content;
+    justify-content: center !important;
+    width: 260px;
+    height: 36px;
+}
+
+:host ::ng-deep .ng-star-inserted.t-cell {
+    padding: 2px;
+    width: 100%;
+    height: 100%;
+    background-clip: content-box;
+
+    line-height: var(--typography-line-height-caption-l, 20px);
+    letter-spacing: var(--typography-letter-spacing-caption-l, -0.1px);
+    color: var(--text-base-secondary, rgba(15, 19, 36, 0.6));
+    font-family: var(--typography-family-inter, Inter);
+    font-size: 14px;
+    font-weight: 400;
+}
+
+:host ::ng-deep tui-calendar tui-scrollbar {
+    /* height: calc(308px - 24px) !important; */
+    height: 308px !important;
+    width: calc(278px - 6px)!important;
+}
+
+:host ::ng-deep tui-calendar tui-calendar-year .ng-star-inserted.t-row {
+    height: min-content;
+    width: min-content;
+    display: grid;
+    grid-template-columns: repeat(4, 69px);
+}
+
+:host ::ng-deep .ng-star-inserted.t-cell[automation-id="tui-calendar-year__cell"] {
+    color: var(--text-base-primary, #14151A);
+    width: min-content;
+    height: min-content;
+    border: initial;
+    padding: 2px;
+    margin: 6px 0;
+}
+
+:host ::ng-deep .ng-star-inserted.t-cell[data-range=active]:not([data-type="weekday"],[data-type="weekend"]) {
+    background-color: rgba(240, 240, 240, 1);
+    border-radius: 2px;
+    background-clip: padding-box;
+}
+
+:host ::ng-deep .t-cell.t-cell_unavailable {
+    color: var(--text-base-quaternary, rgba(41, 16, 10, 0.25));
+}
+
+:host ::ng-deep .t-cell.t-cell_today{
+    text-decoration: unset;
+}
+
+:host ::ng-deep .ng-star-inserted.t-cell::after {
+    all: initial !important;
+}
+:host ::ng-deep .ng-star-inserted.t-cell::before {
+    all: initial !important;
+}
+
+:host ::ng-deep tui-calendar-year {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+:host ::ng-deep .t-bar_horizontal{
+    display: none;
+}
+
+:host ::ng-deep tui-scroll-controls .t-thumb {
+    border-width: 0px;
+    padding: 4px;
+    border-radius: 999px;
+    margin-right: 2px;
+    margin-top: 6px;
+}
+
+:host ::ng-deep tui-scroll-controls .t-bar {
+    height: 100%;    right: -1px;
+    top: -4px;
+}
+
+:host ::ng-deep tui-calendar:has(tui-scrollbar) {
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    width: calc(260px + 12px);
+    height: 308px
+}
+
+:host ::ng-deep .t-cell.t-cell_unavailable {
+    color: var(--text-base-quaternary, rgba(41, 16, 10, 0.25));
+}
+
+:host ::ng-deep .t-cell.t-cell_today {
+    text-decoration: unset;
+}
